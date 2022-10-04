@@ -1,0 +1,118 @@
+.skills-section {
+  position: relative;
+  margin: 2em 0;
+  
+  .skills-container {
+    position: relative;
+    z-index: 99;
+
+    .skill-row {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      border: 1px solid rgba(0,0,0,0.1);
+      border-bottom-width: 4px;
+      border-right-width: 2px;
+      border-radius: 4px;
+      padding: .5em;
+      margin-bottom: .5em;
+
+      .skill-tech-icon {
+        img.skill-tech-image {
+          height: auto;
+          width: 50px;
+        }
+      }
+
+      .skill-detail {
+        width: 100%;
+        margin-left: 1em;
+
+        .skill-title {
+          margin: 0 0 .1em;
+          font-weight: 400;
+        }
+
+        .skill-progress {
+          height: 25px;
+          position: relative;
+          overflow: visible;
+          background-color: #94a3af33;
+
+          .skill-progress-filled {
+            background-color: #7295b3;
+          }
+
+          .skill-progress-stop {
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: inherit;
+
+            &::after {
+              content: '';
+              display: block;
+              position: absolute;
+              background-size: contain;
+              z-index: 99;
+
+              background-image: url("../images/animation/curious-minion.png");
+              background-repeat: no-repeat;
+              height: 38px;
+              width: 28px;
+              right: -16px;
+              top: -13px;
+            }
+
+            &.curious::after {
+              background-image: url("../images/animation/curious-minion.png");
+              background-repeat: no-repeat;
+              height: 38px;
+              width: 28px;
+              right: -16px;
+              top: -13px;
+            }
+
+            &.proud::after {
+              background-image: url("../images/animation/proud-minion-kevin.png");
+              background-repeat: no-repeat;
+              height: 50px;
+              width: 25px;
+              right: -14px;
+              top: -25px;
+            }
+
+            &.interested::after {
+              background-image: url("../images/animation/jolly-minion.png");
+              background-repeat: no-repeat;
+              height: 42px;
+              width: 40px;
+              right: -23px;
+              top: -17px;
+            }
+
+            &.not_interested::after {
+              background-image: url("../images/animation/not-interested-minion.png");
+              background-repeat: no-repeat;
+              height: 45px;
+              width: 25px;
+              right: -12px;
+              top: -10px;
+            }
+
+            &.learning::after {
+              background-image: url("../images/animation/running-minion.png");
+              background-repeat: no-repeat;
+              height: 34px;
+              width: 35px;
+              right: -16px;
+              top: -9px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
