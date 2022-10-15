@@ -1,5 +1,6 @@
 import React from 'react';
 import SkillsIcon from '../images/section-title/skills-icon.png';
+import ExperienceIcon from '../images/section-title/experience-icon.png';
 import '../styles/SectionTitle.scss';
 import PropTypes from 'prop-types';
 
@@ -9,6 +10,12 @@ const sections = {
     sub_title: 'Find all the professional skills',
     icon: SkillsIcon,
     alt: 'Ratatouille (2007) rat clipart for visual representation',
+  },
+  'experience': {
+    title: 'Experience',
+    sub_title: 'Know more about the previous work history!',
+    icon: ExperienceIcon,
+    alt: 'God of War - Kratos clipart for visual representation',
   },
 };
 
