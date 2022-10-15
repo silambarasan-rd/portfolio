@@ -91,7 +91,7 @@ const EngineerType = () => {
     };
   }, []);
 
-  return <div className="d-inline">
+  return <div className="d-block d-md-inline">
     <PulseSpan className="position-absolute fw-bolder" key={engineerType}>
       {TYPES_OF_ENGINEER[engineerType-1].label}
     </PulseSpan>
