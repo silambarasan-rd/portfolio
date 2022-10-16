@@ -19,3 +19,37 @@ body {
   font-family: 'Source Sans Pro', sans-serif;
   background-color: #faf6fc;
 }
+
+// Custom Selection Color
+::-moz-selection {
+  color: #000;
+  background-color: #f6cf53;
+}
+
+::selection {
+  color: #000;
+  background-color: #f6cf53;
+}
+
+// Custom Scrollbar
+/* width */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #e6e6ed;
+  box-shadow: inset 0 0 3px #467499;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #669ecb;
+  border-radius: 2px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #467499;
+}
