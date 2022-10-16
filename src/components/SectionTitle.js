@@ -1,6 +1,7 @@
 import React from 'react';
 import SkillsIcon from '../images/section-title/skills-icon.png';
 import ExperienceIcon from '../images/section-title/experience-icon.png';
+import HobbiesIcon from '../images/section-title/hobbies-icon.png';
 import '../styles/SectionTitle.scss';
 import PropTypes from 'prop-types';
 
@@ -17,6 +18,12 @@ const sections = {
     icon: ExperienceIcon,
     alt: 'God of War - Kratos clipart for visual representation',
   },
+  'hobbies': {
+    title: 'Hobbies',
+    sub_title: 'More on the Hobbies & Interests',
+    icon: HobbiesIcon,
+    alt: 'Wall-E - Robot clipart for visual representation',
+  },
 };
 
 const SectionTitle = ({sectionType}) => {
@@ -24,7 +31,7 @@ const SectionTitle = ({sectionType}) => {
 
   return (
     <>
-      <div className="section-title">
+      <div className={`section-title ${sectionType}`}>
         <h2>{ currentSectionDetail.title }</h2>
         <p>{ currentSectionDetail.sub_title }</p>
         <img src={ currentSectionDetail.icon }
