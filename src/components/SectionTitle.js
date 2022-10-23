@@ -2,6 +2,7 @@ import React from 'react';
 import SkillsIcon from '../images/section-title/skills-icon.png';
 import ExperienceIcon from '../images/section-title/experience-icon.png';
 import HobbiesIcon from '../images/section-title/hobbies-icon.png';
+import ContactIcon from '../images/section-title/contact-icon.png';
 import '../styles/SectionTitle.scss';
 import PropTypes from 'prop-types';
 
@@ -23,6 +24,12 @@ const sections = {
     sub_title: 'More on the Hobbies & Interests',
     icon: HobbiesIcon,
     alt: 'Wall-E - Robot clipart for visual representation',
+  },
+  'contact': {
+    title: 'Contact',
+    sub_title: 'Get in touch with me!',
+    icon: ContactIcon,
+    alt: 'Boss Baby - Baby clipart for visual representation',
   },
 };
 

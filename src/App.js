@@ -3,6 +3,7 @@ import './App.scss';
 import SkillSet from './components/SkillSet';
 import Experience from './components/Experience';
 import Hobbies from './components/Hobbies';
+import Contact from './components/Contact';
 
 
 // eslint-disable-next-line require-jsdoc
@@ -13,6 +14,7 @@ function App() {
       <SkillSet />
       <Experience />
       <Hobbies />
+      <Contact />
     </div>
   );
 }

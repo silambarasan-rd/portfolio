@@ -1,0 +1,36 @@
+.contact-section {
+  position: relative;
+  margin: 2em 0;
+
+  .contact-container {
+    position: relative;
+
+    .contact-row {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.4em;
+
+      .contact-image-container {
+        .contact-image {
+          width: auto;
+          height: 70px;
+        }
+      }
+
+      .contact-detail {
+        margin-left: 1em;
+        a {
+          color: #000;
+          text-decoration: none;
+
+          h1 {
+            margin: 0;
+          }
+        }
+      }
+    }
+  }
+}
