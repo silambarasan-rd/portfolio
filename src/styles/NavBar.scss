@@ -1,0 +1,40 @@
+.navbar {
+  background-color: #376ca4;
+
+  .navbar-brand {
+    .menu-logo {
+      height: 50px;
+      width: auto;
+    }
+  }
+
+  .navbar-nav {
+    .nav-link {
+      padding: .1em .6em;
+      margin: 0.2em .1em;
+      font-size: 1.2em;
+      line-height: 1.2em;
+      font-weight: 300;
+      color: #fff;
+      border: 1px solid rgba(0, 0, 0, 0);
+      border-bottom-width: 2px;
+      border-radius: 3px;
+      transition: background-color .2s ease-in,
+                  border .1s ease-in-out,
+                  color .2s linear;
+      font-family: "Source Sans Pro", sans-serif;
+
+      &:hover {
+          color: #376ca4;
+          background-color: #ffffff;
+          border-color: rgba(0, 0, 0, 0.2);
+      }
+
+      &.active {
+          color: #376ca4;
+          background-color: #ffffff;
+          border-color: rgba(0, 0, 0, 0.2);
+      }
+    }
+  }
+}

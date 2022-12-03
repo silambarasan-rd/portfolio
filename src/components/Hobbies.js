@@ -10,6 +10,7 @@ import BookReadingIcon from '../images/hobbies/read-books.jpg';
 import CraftWorksIcon from '../images/hobbies/craft-works.jpg';
 import PropTypes from 'prop-types';
 import SectionTitle from './SectionTitle';
+import Scroll from 'react-scroll';
 
 const hobbyInterests = [
   {
@@ -91,25 +92,28 @@ HobbyRow.propTypes = {
 
 const Hobbies = () => {
   return (
-    <div className="hobbies-section">
-      <div className="container">
-        <div className="row no-gutters">
-          <div className="col">
-            <SectionTitle sectionType="hobbies" />
+    <Scroll.Element name="hobbies-section">
+      <div className="hobbies-section">
+        <div className="container">
+          <div className="row no-gutters">
+            <div className="col">
+              <SectionTitle sectionType="hobbies" />
 
-            <div className="hobbies-container">
-              <div className="row">
-                {
-                  hobbyInterests.map((skillRow, i) => {
-                    return <HobbyRow hobbyRow={skillRow} key={skillRow.key} />;
-                  })
-                }
+              <div className="hobbies-container">
+                <div className="row">
+                  {
+                    hobbyInterests.map((skillRow, i) => {
+                      return <HobbyRow hobbyRow={skillRow}
+                        key={skillRow.key} />;
+                    })
+                  }
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </Scroll.Element>
   );
 };
 

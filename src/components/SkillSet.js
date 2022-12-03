@@ -15,6 +15,7 @@ import SymfonyIcon from '../images/skills/symfony-logo.png';
 import CppIcon from '../images/skills/c++-logo.svg';
 import PropTypes from 'prop-types';
 import SectionTitle from './SectionTitle';
+import Scroll from 'react-scroll';
 
 const skills = [
   {
@@ -171,34 +172,37 @@ SkillRow.propTypes = {
 
 const SkillSet = () => {
   return (
-    <div className="skills-section">
-      <div className="container">
-        <div className="row">
-          <div className="col">
-            <SectionTitle sectionType="skills" />
+    <Scroll.Element name="skills-section">
+      <div className="skills-section">
+        <div className="container">
+          <div className="row">
+            <div className="col">
+              <SectionTitle sectionType="skills" />
 
-            <div className="skills-container">
-              <div className="row">
-                {
-                  skills.map((skillRow, i) => {
-                    if (i !== 0 && i % 2 === 0) {
-                      return (
-                        <React.Fragment key={skillRow.key}>
-                          <div className="clearfix"></div>
-                          <SkillRow skillRow={skillRow} />
-                        </React.Fragment>
-                      );
-                    }
+              <div className="skills-container">
+                <div className="row">
+                  {
+                    skills.map((skillRow, i) => {
+                      if (i !== 0 && i % 2 === 0) {
+                        return (
+                          <React.Fragment key={skillRow.key}>
+                            <div className="clearfix"></div>
+                            <SkillRow skillRow={skillRow} />
+                          </React.Fragment>
+                        );
+                      }
 
-                    return <SkillRow skillRow={skillRow} key={skillRow.key} />;
-                  })
-                }
+                      return <SkillRow skillRow={skillRow}
+                        key={skillRow.key} />;
+                    })
+                  }
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </Scroll.Element>
   );
 };
 

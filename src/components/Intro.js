@@ -4,6 +4,7 @@ import NameTamil from './../images/name-english-tamil-21st-century.svg';
 import '../styles/Intro.scss';
 import styled, {keyframes} from 'styled-components';
 import {pulse, flipInX} from 'react-animations';
+import Scroll from 'react-scroll';
 
 const LANG_TAMIL = 'ta';
 const LANG_ENGLISH = 'en';
@@ -103,30 +104,32 @@ const EngineerType = () => {
 
 const Intro = () => {
   return (
-    <div className="container">
-      <div className="row">
-        <div className="col">
-          <div className="intro-container">
-            <div className="intro-name">
-              <AuthorNameImg />
-            </div>
-            <h1 className="intro-text">
-              <span className="position-relative">
+    <Scroll.Element name="intro-section">
+      <div className="container">
+        <div className="row">
+          <div className="col">
+            <div className="intro-container">
+              <div className="intro-name">
+                <AuthorNameImg />
+              </div>
+              <h1 className="intro-text">
+                <span className="position-relative">
                 An <EngineerType />
-              </span>
-              <span>&nbsp;Software Engineer,</span>
-              <span>&nbsp;born and grew up in Cuddalore,</span>
-              <span>
+                </span>
+                <span>&nbsp;Software Engineer,</span>
+                <span>&nbsp;born and grew up in Cuddalore,</span>
+                <span>
                 &nbsp;Curious to learn about a new information on each day.
-              </span>
-              <span>
+                </span>
+                <span>
                 &nbsp;Believes in &quot;Earth is not only belong to Humans&quot;
-              </span>
-            </h1>
+                </span>
+              </h1>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </Scroll.Element>
   );
 };
 

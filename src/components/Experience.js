@@ -2,11 +2,11 @@ import React from 'react';
 import '../styles/Experience.scss';
 import SectionTitle from './SectionTitle';
 import PropTypes from 'prop-types';
-
 import BinaryTechResonanceLogo from '../images/companies/1519887552228.jpeg';
 import ManurevaLogo from '../images/companies/manureva.png';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faMapMarkerAlt, faBuilding} from '@fortawesome/free-solid-svg-icons';
+import Scroll from 'react-scroll';
 
 const experienceRows = [
   {
@@ -151,26 +151,28 @@ ExperienceRow.propTypes = {
 
 const Experience = () => {
   return (
-    <div className="experience-section">
-      <div className="container">
-        <div className="row">
-          <div className="col">
-            <SectionTitle sectionType="experience" />
+    <Scroll.Element name="experience-section">
+      <div className="experience-section">
+        <div className="container">
+          <div className="row">
+            <div className="col">
+              <SectionTitle sectionType="experience" />
 
-            <div className="experience-container">
-              <div className="row">
-                {
-                  experienceRows.map((experienceItem) => (
-                    <ExperienceRow key={experienceItem.key}
-                      experienceRow={experienceItem} />
-                  ))
-                }
+              <div className="experience-container">
+                <div className="row">
+                  {
+                    experienceRows.map((experienceItem) => (
+                      <ExperienceRow key={experienceItem.key}
+                        experienceRow={experienceItem} />
+                    ))
+                  }
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </Scroll.Element>
   );
 };
 
