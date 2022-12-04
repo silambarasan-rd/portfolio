@@ -1,16 +1,9 @@
 import React, {useEffect, useState} from 'react';
-import NameEnglish from './../images/name-english-text.svg';
-import NameTamil from './../images/name-english-tamil-21st-century.svg';
+import SilambarasanPicture from
+  './../images/silambarasan-rd-senior-software-engineer.png';
 import '../styles/Intro.scss';
-import styled, {keyframes} from 'styled-components';
-import {pulse, flipInX} from 'react-animations';
 import Scroll from 'react-scroll';
-
-const LANG_TAMIL = 'ta';
-const LANG_ENGLISH = 'en';
-const DEFAULT_LANG = LANG_ENGLISH;
-
-const NAME_TEXT_CHANGE_INTERVAL = 4500; // milliseconds (seconds * 1000)
+import {Image} from 'react-bootstrap';
 
 const TYPES_OF_ENGINEER = [
   {
@@ -30,52 +23,6 @@ const DEFAULT_TYPE_OF_ENGINEER = 3; // 1 based Index
 
 const ENGINEER_TYPE_CHANGE_INTERVAL = 3500; // milliseconds (seconds * 1000)
 
-// const fadeInAnimation = keyframes`${fadeIn}`;
-const pulseAnimation = keyframes`${pulse}`;
-const flipInAnimation = keyframes`${flipInX}`;
-
-const FlipInDiv = styled.div`
-      animation: 1s ${flipInAnimation};
-    `;
-
-const PulseSpan = styled.span`
-      animation: 2s ${pulseAnimation};
-    `;
-
-const AuthorNameImg = () => {
-  // Current lang of the Name text image
-  const [nameText, setNameText] = useState(DEFAULT_LANG);
-
-  useEffect(() => {
-    const nameInterval = setInterval(() => {
-      setNameText((prevNameText) => {
-        if (prevNameText === LANG_TAMIL) {
-          return LANG_ENGLISH;
-        }
-        return LANG_TAMIL;
-      });
-    }, NAME_TEXT_CHANGE_INTERVAL);
-
-    return () => {
-      clearInterval(nameInterval);
-    };
-  }, []);
-
-  if (nameText === LANG_TAMIL) {
-    return <FlipInDiv key={nameText}>
-      <img src={ NameTamil }
-        className="intro-name-image" alt="Silambarasan R"
-      />
-    </FlipInDiv>;
-  }
-
-  return <FlipInDiv key={nameText}>
-    <img src={ NameEnglish }
-      className="intro-name-image" alt="Silambarasan R"
-    />
-  </FlipInDiv>;
-};
-
 const EngineerType = () => {
   // Current type of the Engineer text
   const [engineerType, setEngineerType] = useState(DEFAULT_TYPE_OF_ENGINEER);
@@ -92,10 +39,10 @@ const EngineerType = () => {
     };
   }, []);
 
-  return <div className="d-block d-md-inline">
-    <PulseSpan className="position-absolute fw-bolder" key={engineerType}>
+  return <div className="d-inline">
+    <span className="position-absolute fw-bolder" key={engineerType}>
       {TYPES_OF_ENGINEER[engineerType-1].label}
-    </PulseSpan>
+    </span>
     <div className="invisible d-inline pe-2 pe-md-3">
       {TYPES_OF_ENGINEER[engineerType-1].label}
     </div>
@@ -109,22 +56,50 @@ const Intro = () => {
         <div className="row">
           <div className="col">
             <div className="intro-container">
-              <div className="intro-name">
-                <AuthorNameImg />
+              <div className="row">
+                <div className="col-md-4">
+                  <div className="intro-picture-wrapper">
+                    <Image src={SilambarasanPicture}
+                      className="intro-picture" />
+                  </div>
+                </div>
+                <div className="col-md-8">
+                  <div
+                    className="d-flex flex-column justify-content-center h-100">
+                    <div className="intro-greetings">
+                      <h1 className="greeting-text">
+                        Hi, I&apos;m Silambarasan
+                      </h1>
+                      <h4 className="greeting-sub-text">
+                        <span>Glad you&apos;re here!</span>
+                        <span>&nbsp;Please take a look around</span>
+                      </h4>
+                    </div>
+                    <h1 className="intro-description">
+                      <span className="position-relative">
+                      An <EngineerType />
+                      </span>
+                      <span>Software Engineer based in India,</span>
+                      <span>
+                        &nbsp;who develops high quality and end-to-end
+                        software application / mobile application.
+                      </span><br/>
+                      <span>
+                      &nbsp;Loves reading adventure books,
+                      sketching, listening to music and playing PC games.
+                      </span><br/>
+                      <span>
+                      &nbsp;Curious to learn a piece of
+                      new information each day.
+                      </span>
+                      <span>
+                        &nbsp;Believes in &quot;Earth is not only
+                        belong to Humans&quot;
+                      </span>
+                    </h1>
+                  </div>
+                </div>
               </div>
-              <h1 className="intro-text">
-                <span className="position-relative">
-                An <EngineerType />
-                </span>
-                <span>&nbsp;Software Engineer,</span>
-                <span>&nbsp;born and grew up in Cuddalore,</span>
-                <span>
-                &nbsp;Curious to learn about a new information on each day.
-                </span>
-                <span>
-                &nbsp;Believes in &quot;Earth is not only belong to Humans&quot;
-                </span>
-              </h1>
             </div>
           </div>
         </div>
