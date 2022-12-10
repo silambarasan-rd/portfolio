@@ -17,12 +17,16 @@ const experienceRows = [
     startMonth: 'April',
     endYear: '2020',
     current: true,
+    short_description: `Entered Manureva as a "Senior Software Developer" with 
+    hands-on coding experience. Worked on both web & mobile application(s) 
+    development and finished each project within the timeline given which then 
+    helped me to get promoted as a "Technical Lead".`,
     location: 'Puducherry, India',
     image: ManurevaLogo,
     technologies: [
       'HTML5',
       'CSS3',
-      'JS (ES6)',
+      'JavaScript (ES6)',
       'Node JS',
       'Express',
       'Mongo DB',
@@ -45,6 +49,7 @@ const experienceRows = [
       'Postman',
       'GitHub',
       'Jira',
+      'Slack',
     ],
     // child: [] // TODO: To display Different roles within a same company
   },
@@ -56,12 +61,16 @@ const experienceRows = [
     startMonth: 'June',
     endYear: '2020',
     current: false,
+    short_description: `Started my journey in the software industry 
+    as a "Junior PHP Developer", For the first 2-3 months I struggled to 
+    adapt myself but I worked hard to learn new technologies then gradually
+    everything changed and it became second nature.`,
     location: 'Chennai, Tamilnadu, India',
     image: BinaryTechResonanceLogo,
     technologies: [
       'HTML5',
       'CSS3',
-      'JS',
+      'JavaScript',
       'jQuery',
       'Angular',
       'TypeScript',
@@ -119,6 +128,9 @@ const ExperienceRow = ({experienceRow}) => {
             {experienceRow.location}
           </h5>
         </div>
+        <div className="experience-description-container">
+          <p className="short-description">{experienceRow.short_description}</p>
+        </div>
         <div className="experience-tech-detail">
           <div className="technologies-list">
             {
@@ -140,6 +152,7 @@ ExperienceRow.propTypes = {
     key: PropTypes.string,
     position: PropTypes.string,
     company_name: PropTypes.string,
+    short_description: PropTypes.string,
     startYear: PropTypes.string,
     startMonth: PropTypes.string,
     endYear: PropTypes.string,
@@ -152,21 +165,19 @@ ExperienceRow.propTypes = {
 const Experience = () => {
   return (
     <Scroll.Element name="experience-section">
-      <div className="experience-section">
-        <div className="container">
-          <div className="row">
-            <div className="col">
+      <div className="container">
+        <div className="row">
+          <div className="col">
+            <div className="experience-section">
               <SectionTitle sectionType="experience" />
 
               <div className="experience-container">
-                <div className="row">
-                  {
-                    experienceRows.map((experienceItem) => (
-                      <ExperienceRow key={experienceItem.key}
-                        experienceRow={experienceItem} />
-                    ))
-                  }
-                </div>
+                {
+                  experienceRows.map((experienceItem) => (
+                    <ExperienceRow key={experienceItem.key}
+                      experienceRow={experienceItem} />
+                  ))
+                }
               </div>
             </div>
           </div>
