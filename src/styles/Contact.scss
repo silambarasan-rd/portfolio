@@ -1,33 +1,116 @@
 .contact-section {
   position: relative;
   padding: 4em 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  @media (screen and max-width: 768px) {
+    height: auto !important;
+    padding: 2em 0;
+  }
 
   .contact-container {
     position: relative;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
 
-    .contact-row {
+    .contact-left-container {
+      position:relative;
+      text-align:right;
+      height:500px;
       width: 100%;
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 1.4em;
 
-      .contact-image-container {
-        .contact-image {
-          width: auto;
-          height: 70px;
+      @media (screen and max-width: 768px) {
+        height: 250px;
+      }
+
+      .map-container {
+        overflow:hidden;
+        background:none!important;
+        height:500px;
+        width: 100%;
+
+        @media (screen and max-width: 768px) {
+          height: 250px;
+        }
+
+        .map-frame {
+          height: 500px;
+
+          @media (screen and max-width: 768px) {
+            height: 250px;
+          }
+        }
+      }
+    }
+
+    .contact-right-container {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      @media (screen and max-width: 768px) {
+        margin-top: 1.5em;
+      }
+
+      .contact-details-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        padding: 0 2em;
+
+        .contact-row {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: center;
+          margin-bottom: 1.4em;
+
+          .contact-image-container {
+            .contact-image {
+              width: auto;
+              height: 70px;
+            }
+          }
+
+          .contact-detail {
+            margin-left: 1em;
+            a {
+              color: #000;
+              text-decoration: none;
+
+              h1 {
+                margin: 0;
+              }
+            }
+          }
         }
       }
 
-      .contact-detail {
-        margin-left: 1em;
-        a {
-          color: #000;
-          text-decoration: none;
+      .contact-recommend-wrapper {
+        display: flex;
+        margin-top: 2.5em;
+        justify-content: center;
+        align-items: center;
+        padding: 0 2em;
 
-          h1 {
-            margin: 0;
+        @media (screen and max-width: 768px) {
+          flex-direction: column;
+          margin-top: .5em;
+        }
+
+        .recommend-caption {
+          margin: 0;
+          margin-right: .5em;
+        }
+
+        .recommend-btn {
+          @media (screen and max-width: 768px) {
+            margin-top: .5em;
+            margin-bottom: .8em;
           }
         }
       }
