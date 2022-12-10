@@ -1,0 +1,12 @@
+.back-to-top-container {
+  position: relative;
+
+  .back-to-top {
+    position: fixed;
+    right: 40px;
+    background: #1b2732;
+    z-index: 9999;
+    bottom: 40px;
+    padding: .3em .6em;
+  }
+}

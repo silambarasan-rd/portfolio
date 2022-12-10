@@ -5,6 +5,7 @@ import Experience from './components/Experience';
 import Hobbies from './components/Hobbies';
 import Contact from './components/Contact';
 import NavBar from './components/NavBar';
+import BackToTop from './components/BackToTop';
 
 
 // eslint-disable-next-line require-jsdoc
@@ -17,6 +18,7 @@ function App() {
       <Experience />
       <Hobbies />
       <Contact />
+      <BackToTop />
     </div>
   );
 }
