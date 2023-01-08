@@ -1,0 +1,187 @@
+.education-section {
+  position: relative;
+  padding: 4em 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  @media (screen and max-width: 768px) {
+    height: auto !important;
+    padding: 2em 0;
+  }
+
+  .education-container {
+    position: relative;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+    &::before {
+      content: "";
+      position: absolute;
+      height: 100%;
+      width: 1px;
+      border-right: 2px dashed rgba(113, 148, 178, 0.5);
+      left: 117px;
+
+      @media (screen and max-width: 768px) {
+        display: none;
+        width: 0;
+        height: 0;
+      }
+    }
+
+    .education-row {
+      position: relative;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      border-collapse: collapse;
+      padding: .5em;
+      margin-bottom: .5em;
+
+      &:not(:last-child) {
+        margin-bottom: 3em !important;
+        padding-bottom: 1.6em !important;
+
+        @media (screen and max-width: 768px) {
+          &::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 10%;
+            width: 80%;
+            border-bottom: 1px dashed rgba(0,0,0, .1);
+          }
+        }
+      }
+
+      .education-duration {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        padding-right: 1em;
+        margin-right: 1em;
+        border-collapse: collapse;
+        min-width: 125px;
+        align-items: center;
+
+        @media (screen and max-width: 768px) {
+          position: relative;
+          top: 5%;
+          min-width: 70px;
+          margin-right: 0;
+          padding-right: 0;
+        }
+
+        &::after {
+          content: "";
+          display: block;
+          position: absolute;
+          width: 16px;
+          height: 16px;
+          border-radius: 50%;
+          border: 5px solid rgba(52, 97, 135, 0.5);
+          background-color: #f8f4fa;
+          right: 5%;
+          top: calc(50% - 8px);
+
+          @media (screen and max-width: 768px) {
+            display: none;
+            visibility: hidden;
+            opacity: 0;
+          }
+        }
+
+        .start-year, .end-year {
+          position: relative;
+          margin: 0;
+          text-align: right;
+          width: max-content;
+          font-family: "Open Sans", sans-serif;
+          color: #d74a2f;
+        }
+
+        .year-separator {
+          width: 100%;
+
+          &::before {
+            content: "";
+            height: 2px;
+            width: 85%;
+            background-color: #96abc1;
+            display: block;
+            position: relative;
+            float: right;
+
+            @media (screen and max-width: 768px) {
+              float: none;
+              margin: 0 auto;
+            }
+          }
+        }
+      }
+
+      .education-tech-icon {
+        margin-left: 1em;
+
+        img.education-tech-image {
+          height: auto;
+          width: 80px;
+        }
+      }
+
+      .education-detail {
+        width: 100%;
+        margin-left: 1em;
+
+        .education-title {
+          margin: 0 0 .1em;
+          font-weight: 400;
+        }
+
+        .education-company-detail {
+          display: flex;
+          flex-direction: column;
+          margin-bottom: .4em;
+          margin-top: .6em;
+
+          .company-title {
+            position: relative;
+            margin: 0;
+
+            .company-icon {
+              color: #7295b3;
+              margin-right: .2em;
+            }
+          }
+
+          .company-location {
+            position: relative;
+            margin: 0;
+            margin-top: .2em;
+
+            .location-icon {
+              color: #c00406;
+              margin-right: .1em;
+            }
+          }
+        }
+
+        .education-description-container {
+          position: relative;
+          margin-bottom: 1em;
+
+          .short-description {
+            margin: 0;
+            padding: 0 .2em;
+            color: #767676;
+            font-style: oblique;
+          }
+        }
+      }
+    }
+  }
+}

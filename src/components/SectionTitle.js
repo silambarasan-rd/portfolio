@@ -1,6 +1,7 @@
 import React from 'react';
 import SkillsIcon from '../images/section-title/skills-icon.png';
 import ExperienceIcon from '../images/section-title/experience-icon.png';
+import EducationIcon from '../images/section-title/education-icon.png';
 import HobbiesIcon from '../images/section-title/hobbies-icon.png';
 import ContactIcon from '../images/section-title/contact-icon.png';
 import '../styles/SectionTitle.scss';
@@ -18,6 +19,12 @@ const sections = {
     sub_title: 'Know more about the previous work history!',
     icon: ExperienceIcon,
     alt: 'God of War - Kratos clipart for visual representation',
+  },
+  'education': {
+    title: 'Education',
+    sub_title: 'Basic detail about of educational history',
+    icon: EducationIcon,
+    alt: 'Zootopia - Sheep with books',
   },
   'hobbies': {
     title: 'Hobbies',
@@ -50,7 +57,7 @@ const SectionTitle = ({sectionType}) => {
 
 SectionTitle.propTypes = {
   sectionType: PropTypes.oneOf(
-      ['skills', 'experience', 'hobbies', 'contact'],
+      ['skills', 'experience', 'education', 'hobbies', 'contact'],
   ).isRequired,
 };
 
