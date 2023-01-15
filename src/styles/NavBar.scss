@@ -40,3 +40,25 @@
     }
   }
 }
+
+.nav-link.download-resume {
+  position: absolute;
+  right: 0.5em;
+  top: 0;
+
+  padding: .1em .6em;
+  margin: 0.2em .1em;
+  font-size: 1.2em;
+  line-height: 1.2em;
+  font-weight: 300;
+  color: #ffffff;
+  background-color: #5d4037;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-bottom-width: 2px;
+  border-radius: 3px;
+  transition: background-color .2s ease-in,
+  border .1s ease-in-out,
+  color .2s linear;
+  font-family: "Source Sans Pro", sans-serif;
+  cursor: pointer;
+}
