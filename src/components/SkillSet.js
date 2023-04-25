@@ -13,6 +13,18 @@ import CodeigniterIcon from '../images/skills/codeigniter-logo.png';
 import LaravelIcon from '../images/skills/laravel-logo.png';
 import SymfonyIcon from '../images/skills/symfony-logo.png';
 import CppIcon from '../images/skills/c++-logo.svg';
+import RubyIcon from '../images/skills/ruby-logo.png';
+import PythonIcon from '../images/skills/python-logo.png';
+import IonicIcon from '../images/skills/ionic-logo.svg';
+import ReduxIcon from '../images/skills/redux-logo.svg';
+import ReactNativeIcon from '../images/skills/react-native-logo.svg';
+import MySQLIcon from '../images/skills/mysql-logo.svg';
+import AWSIcon from '../images/skills/aws-logo.svg';
+import GitIcon from '../images/skills/git-logo.svg';
+import SassIcon from '../images/skills/sass-logo.svg';
+import TypeScriptIcon from '../images/skills/typescript-logo.svg';
+import PhotoShopIcon from '../images/skills/adobe-photoshop-logo.svg';
+import AfterEffectsIcon from '../images/skills/adobe-after-effects-logo.svg';
 import PropTypes from 'prop-types';
 import SectionTitle from './SectionTitle';
 import Scroll from 'react-scroll';
@@ -35,11 +47,27 @@ const skills = [
     stopper: 'proud',
   },
   {
+    key: 'sass',
+    label: 'Sass',
+    image: SassIcon,
+    capacity: 78,
+    capacityPercent: '78%',
+    stopper: 'proud',
+  },
+  {
     key: 'javascript',
     label: 'Javascript',
     image: JavascriptIcon,
-    capacity: 85,
-    capacityPercent: '85%',
+    capacity: 86,
+    capacityPercent: '86%',
+    stopper: 'proud',
+  },
+  {
+    key: 'typescript',
+    label: 'TypeScript',
+    image: TypeScriptIcon,
+    capacity: 84,
+    capacityPercent: '84%',
     stopper: 'proud',
   },
   {
@@ -59,12 +87,36 @@ const skills = [
     stopper: 'proud',
   },
   {
+    key: 'ionic-framework',
+    label: 'Ionic',
+    image: IonicIcon,
+    capacity: 88,
+    capacityPercent: '88%',
+    stopper: 'proud',
+  },
+  {
     key: 'react-js',
     label: 'React js',
     image: ReactIcon,
     capacity: 85,
     capacityPercent: '85%',
     stopper: 'learning',
+  },
+  {
+    key: 'redux',
+    label: 'Redux',
+    image: ReduxIcon,
+    capacity: 75,
+    capacityPercent: '75%',
+    stopper: 'learning',
+  },
+  {
+    key: 'react-native',
+    label: 'React Native',
+    image: ReactNativeIcon,
+    capacity: 85,
+    capacityPercent: '85%',
+    stopper: 'proud',
   },
   {
     key: 'node-js',
@@ -91,11 +143,19 @@ const skills = [
     stopper: 'not_interested',
   },
   {
+    key: 'mysql',
+    label: 'MySQL',
+    image: MySQLIcon,
+    capacity: 90,
+    capacityPercent: '90%',
+    stopper: 'proud',
+  },
+  {
     key: 'codeigniter',
     label: 'Codeigniter 3',
     image: CodeigniterIcon,
-    capacity: 88,
-    capacityPercent: '88%',
+    capacity: 72,
+    capacityPercent: '72%',
     stopper: 'proud',
   },
   {
@@ -115,6 +175,38 @@ const skills = [
     stopper: 'proud',
   },
   {
+    key: 'aws',
+    label: 'AWS',
+    image: AWSIcon,
+    capacity: 66,
+    capacityPercent: '66%',
+    stopper: 'learning',
+  },
+  {
+    key: 'git',
+    label: 'Git',
+    image: GitIcon,
+    capacity: 89,
+    capacityPercent: '89%',
+    stopper: 'proud',
+  },
+  {
+    key: 'adobe-photoshop',
+    label: 'Adobe Photoshop',
+    image: PhotoShopIcon,
+    capacity: 78,
+    capacityPercent: '78%',
+    stopper: 'proud',
+  },
+  {
+    key: 'adobe-after-effects',
+    label: 'Adobe After Effects',
+    image: AfterEffectsIcon,
+    capacity: 72,
+    capacityPercent: '72%',
+    stopper: 'proud',
+  },
+  {
     key: 'modern-c++',
     label: 'Modern C++',
     image: CppIcon,
@@ -122,10 +214,22 @@ const skills = [
     capacityPercent: '25%',
     stopper: 'interested',
   },
-  // TODO: Below skill list should need to be displayed in the future.
-  // Adobe Photoshop, Adobe Illustrator, After Effects, Premiere Pro
-  // AWS - S3, EC2, Cognito, Dynamo DB
-  // React Native, Ionic, MySQL, WordPress, Sass, TypeScript, Git
+  {
+    key: 'python',
+    label: 'Python',
+    image: PythonIcon,
+    capacity: 20,
+    capacityPercent: '20%',
+    stopper: 'interested',
+  },
+  {
+    key: 'ruby-on-rails',
+    label: 'Ruby on Rails',
+    image: RubyIcon,
+    capacity: 20,
+    capacityPercent: '20%',
+    stopper: 'interested',
+  },
 ];
 
 const SkillRow = ({skillRow}) => {
