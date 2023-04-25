@@ -15,7 +15,14 @@
       border-right-width: 2px;
       border-radius: 4px;
       padding: .5em;
-      margin-bottom: .5em;
+      margin-bottom: .2em;
+      cursor: pointer;
+      transition: 0.18s linear all;
+
+      &:hover {
+        background-color: #fff8e0;
+        border-color: #434c4c;
+      }
 
       .skill-tech-icon {
         img.skill-tech-image {
@@ -34,7 +41,7 @@
         }
 
         .skill-progress {
-          height: 25px;
+          height: 16px;
           position: relative;
           overflow: visible;
           background-color: #94a3af33;
@@ -50,66 +57,6 @@
             justify-content: center;
             align-items: center;
             height: inherit;
-
-            &::after {
-              content: '';
-              display: block;
-              position: absolute;
-              background-size: contain;
-              z-index: 99;
-
-              background-image: url("../images/animation/curious-minion.png");
-              background-repeat: no-repeat;
-              height: 38px;
-              width: 28px;
-              right: -16px;
-              top: -13px;
-            }
-
-            &.curious::after {
-              background-image: url("../images/animation/curious-minion.png");
-              background-repeat: no-repeat;
-              height: 38px;
-              width: 28px;
-              right: -16px;
-              top: -13px;
-            }
-
-            &.proud::after {
-              background-image: url("../images/animation/proud-minion-kevin.png");
-              background-repeat: no-repeat;
-              height: 50px;
-              width: 25px;
-              right: -14px;
-              top: -25px;
-            }
-
-            &.interested::after {
-              background-image: url("../images/animation/jolly-minion.png");
-              background-repeat: no-repeat;
-              height: 42px;
-              width: 40px;
-              right: -23px;
-              top: -17px;
-            }
-
-            &.not_interested::after {
-              background-image: url("../images/animation/not-interested-minion.png");
-              background-repeat: no-repeat;
-              height: 45px;
-              width: 25px;
-              right: -12px;
-              top: -10px;
-            }
-
-            &.learning::after {
-              background-image: url("../images/animation/running-minion.png");
-              background-repeat: no-repeat;
-              height: 34px;
-              width: 35px;
-              right: -16px;
-              top: -9px;
-            }
           }
         }
       }

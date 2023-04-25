@@ -233,7 +233,7 @@ const skills = [
 ];
 
 const SkillRow = ({skillRow}) => {
-  return <div className="col-md-6 col-12">
+  return <div className="col-md-4 col-12">
     <div className="skill-row">
       <div className="skill-tech-icon">
         <img src={skillRow.image}
@@ -284,21 +284,11 @@ const SkillSet = () => {
               <SectionTitle sectionType="skills" />
 
               <div className="skills-container">
-                <div className="row">
+                <div className="row g-1 justify-content-center">
                   {
-                    skills.map((skillRow, i) => {
-                      if (i !== 0 && i % 2 === 0) {
-                        return (
-                          <React.Fragment key={skillRow.key}>
-                            <div className="clearfix"></div>
-                            <SkillRow skillRow={skillRow} />
-                          </React.Fragment>
-                        );
-                      }
-
-                      return <SkillRow skillRow={skillRow}
-                        key={skillRow.key} />;
-                    })
+                    skills.map((skillRow, i) => (
+                      <SkillRow skillRow={skillRow} key={skillRow.key} />
+                    ))
                   }
                 </div>
               </div>
