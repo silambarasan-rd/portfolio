@@ -20,8 +20,23 @@
       transition: 0.18s linear all;
 
       &:hover {
-        background-color: #fff8e0;
-        border-color: #434c4c;
+        background-color: #d4dde3;
+        border-color: #065a82;
+
+        .skill-detail {
+
+          .skill-title {
+            color: #065a82;
+          }
+
+          .skill-progress {
+            background-color: rgba(255, 255, 255, .45);
+
+            .skill-progress-filled {
+              background-color: #065a82;
+            }
+          }
+        }
       }
 
       .skill-tech-icon {
@@ -47,7 +62,7 @@
           background-color: #94a3af33;
 
           .skill-progress-filled {
-            background-color: #7295b3;
+            background-color: #465164;
           }
 
           .skill-progress-stop {

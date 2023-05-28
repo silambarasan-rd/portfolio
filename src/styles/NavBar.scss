@@ -1,5 +1,5 @@
 .navbar {
-  background-color: #f6cf53;
+  background-color: #065A82;
   box-shadow: 0 1px 8px rgba(0,0,0,.15);
 
   .navbar-brand {
@@ -16,7 +16,7 @@
       font-size: 1.2em;
       line-height: 1.2em;
       font-weight: 300;
-      color: #1B2732;
+      color: #fff;
       border: 1px solid rgba(0, 0, 0, 0);
       border-bottom-width: 2px;
       border-radius: 3px;
@@ -28,14 +28,14 @@
 
       &:hover {
         color: #ffffff;
-        background-color: #3a434c;
-        border-color: rgba(0, 0, 0, 0.2);
+        background-color: #1C7293;
+        border-color: rgba(0, 0, 0, 0.3);
       }
 
       &.active {
-          color: #ffffff;
-          background-color: #1B2732;
-          border-color: rgba(0, 0, 0, 0.2);
+          color: #065A82;
+          background-color: #fff;
+          border-color: rgba(0, 0, 0, 0.3);
       }
     }
   }
@@ -52,9 +52,9 @@
   line-height: 1.2em;
   font-weight: 300;
   color: #ffffff;
-  background-color: #5d4037;
-  border: 1px solid rgba(0, 0, 0, 0.2);
-  border-bottom-width: 2px;
+  background-color: #1C7293;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  border-bottom-width: 3px;
   border-radius: 3px;
   transition: background-color .2s ease-in,
   border .1s ease-in-out,

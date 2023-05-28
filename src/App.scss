@@ -17,18 +17,23 @@
 
 body {
   font-family: 'Source Sans Pro', sans-serif;
-  background-color: #fdf9f2;
+  background-color: #9EB3C2;
+
+  background-image: url("./images/light_noise_diagonal.png");
+  background-repeat: repeat repeat;
+  background-size: 150px;
+  background-blend-mode: overlay;
 }
 
 // Custom Selection Color
 ::-moz-selection {
-  color: #000;
-  background-color: #f6cf53;
+  color: #fff;
+  background-color: #1C7293;
 }
 
 ::selection {
-  color: #000;
-  background-color: #f6cf53;
+  color: #fff;
+  background-color: #1C7293;
 }
 
 // Custom Scrollbar
@@ -39,17 +44,15 @@ body {
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #e6e6ed;
-  box-shadow: inset 0 0 3px #467499;
+  background: #d4dde3;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #669ecb;
-  border-radius: 2px;
+  background: #1C7293;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #467499;
+  background: #065a82;
 }
