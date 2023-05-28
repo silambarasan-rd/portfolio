@@ -6,6 +6,8 @@ import GitHubIcon from '../images/contact/contact-github.svg';
 import StackOverflowIcon from '../images/contact/contact-stack-overflow.svg';
 import LinkedInIcon from '../images/contact/contact-linkedin.svg';
 import MobileIcon from '../images/contact/contact-mobile.png';
+// eslint-disable-next-line max-len
+import CuddaloreMap from '../images/contact/India_Tamil_Nadu_Cuddalore_district.png';
 import Scroll from 'react-scroll';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faLinkedin} from '@fortawesome/free-brands-svg-icons';
@@ -24,11 +26,9 @@ const Contact = () => {
                   <div className="col-md-4 col-12">
                     <div className="contact-left-container">
                       <div className="map-container">
-                        <iframe width="100%" className="map-frame"
-                          id="gmap_canvas"
-                          src="https://maps.google.com/maps?q=cuddalore&t=k&z=13&ie=UTF8&iwloc=&output=embed"
-                          frameBorder="0" scrolling="no"
-                          marginHeight="0" marginWidth="0" />
+                        <img src={CuddaloreMap}
+                          className="img-fluid"
+                          alt="Cuddalore District Map" />
                       </div>
                     </div>
                   </div>
