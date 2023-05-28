@@ -8,6 +8,14 @@ import {faMapMarkerAlt,
 import Scroll from 'react-scroll';
 
 const educationRows = [
+  // {
+  //   key: 'master-of-computer-applications',
+  //   field_of_study: 'Master of Computer Applications (DDE)',
+  //   institution_name: `Annamalai University`,
+  //   startYear: '2023',
+  //   endYear: '-',
+  //   location: 'Chidambaram, Tamilnadu, India',
+  // },
   {
     key: 'bachelor-of-computer-applications',
     field_of_study: 'Bachelor of Computer Applications',
@@ -18,7 +26,7 @@ const educationRows = [
   },
   {
     key: 'higher-secondary-education',
-    field_of_study: 'High School',
+    field_of_study: 'High School (HSC) - Biology',
     institution_name: 'St. Joseph\'s Higher Secondary School',
     startYear: '2006',
     endYear: '2014',
