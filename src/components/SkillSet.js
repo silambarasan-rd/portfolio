@@ -25,6 +25,7 @@ import SassIcon from '../images/skills/sass-logo.svg';
 import TypeScriptIcon from '../images/skills/typescript-logo.svg';
 import PhotoShopIcon from '../images/skills/adobe-photoshop-logo.svg';
 import AfterEffectsIcon from '../images/skills/adobe-after-effects-logo.svg';
+import GolangIcon from '../images/skills/golang.svg';
 import PropTypes from 'prop-types';
 import SectionTitle from './SectionTitle';
 import Scroll from 'react-scroll';
@@ -210,24 +211,32 @@ const skills = [
     key: 'modern-c++',
     label: 'Modern C++',
     image: CppIcon,
-    capacity: 25,
-    capacityPercent: '25%',
+    capacity: 21,
+    capacityPercent: '21%',
     stopper: 'interested',
   },
   {
     key: 'python',
     label: 'Python',
     image: PythonIcon,
-    capacity: 20,
-    capacityPercent: '20%',
+    capacity: 9,
+    capacityPercent: '9%',
     stopper: 'interested',
   },
   {
     key: 'ruby-on-rails',
     label: 'Ruby on Rails',
     image: RubyIcon,
-    capacity: 20,
-    capacityPercent: '20%',
+    capacity: 8,
+    capacityPercent: '8%',
+    stopper: 'interested',
+  },
+  {
+    key: 'golang',
+    label: 'Golang (Gin)',
+    image: GolangIcon,
+    capacity: 22,
+    capacityPercent: '22%',
     stopper: 'interested',
   },
 ];
