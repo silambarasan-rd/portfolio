@@ -26,6 +26,8 @@ import TypeScriptIcon from '../images/skills/typescript-logo.svg';
 import PhotoShopIcon from '../images/skills/adobe-photoshop-logo.svg';
 import AfterEffectsIcon from '../images/skills/adobe-after-effects-logo.svg';
 import GolangIcon from '../images/skills/golang.svg';
+import JavaIcon from '../images/skills/java.png';
+import SpringBootIcon from '../images/skills/spring.svg';
 import PropTypes from 'prop-types';
 import SectionTitle from './SectionTitle';
 import Scroll from 'react-scroll';
@@ -237,6 +239,22 @@ const skills = [
     image: GolangIcon,
     capacity: 22,
     capacityPercent: '22%',
+    stopper: 'interested',
+  },
+  {
+    key: 'java',
+    label: 'Java',
+    image: JavaIcon,
+    capacity: 26,
+    capacityPercent: '26%',
+    stopper: 'interested',
+  },
+  {
+    key: 'springboot',
+    label: 'Spring Boot',
+    image: SpringBootIcon,
+    capacity: 28,
+    capacityPercent: '28%',
     stopper: 'interested',
   },
 ];
