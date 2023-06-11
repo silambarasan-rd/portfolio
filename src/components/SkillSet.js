@@ -31,6 +31,7 @@ import SpringBootIcon from '../images/skills/spring.svg';
 import PropTypes from 'prop-types';
 import SectionTitle from './SectionTitle';
 import Scroll from 'react-scroll';
+import SingleSkill from '../styled-components/SkillSet/SingleSkill';
 
 const skills = [
   {
@@ -260,31 +261,8 @@ const skills = [
 ];
 
 const SkillRow = ({skillRow}) => {
-  return <div className="col-md-4 col-12">
-    <div className="skill-row">
-      <div className="skill-tech-icon">
-        <img src={skillRow.image}
-          className="skill-tech-image" alt={skillRow.label}/>
-      </div>
-      <div className="skill-detail">
-        <h2 className="skill-title">{skillRow.label}</h2>
-        <div className="progress skill-progress">
-          <div className="progress-bar skill-progress-filled"
-            role="progressbar"
-            style={{width: skillRow.capacityPercent}}
-            aria-valuenow={skillRow.capacity}
-            aria-valuemin="0"
-            aria-valuemax="100">
-          </div>
-          <div className={
-            // eslint-disable-next-line max-len
-            `progress-bar-stop skill-progress-stop ${skillRow?.stopper}`
-          }
-          style={{width: skillRow.capacityPercent}}
-          ></div>
-        </div>
-      </div>
-    </div>
+  return <div className="col-md-3 col-12">
+    <SingleSkill skillRow={skillRow} />
   </div>;
 };
 
