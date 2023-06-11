@@ -23,7 +23,7 @@ const Contact = () => {
 
               <div className="contact-container">
                 <div className="row justify-content-center">
-                  <div className="col-md-4 col-12">
+                  <div className="col-md-3 col-12">
                     <div className="contact-left-container">
                       <div className="map-container">
                         <img src={CuddaloreMap}
@@ -32,7 +32,7 @@ const Contact = () => {
                       </div>
                     </div>
                   </div>
-                  <div className="col-md-8 col-12">
+                  <div className="col-md-9 col-12">
                     <div className="contact-right-container">
                       <div className="contact-details-wrapper">
                         <div className="contact-row">
