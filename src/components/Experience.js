@@ -4,19 +4,57 @@ import SectionTitle from './SectionTitle';
 import PropTypes from 'prop-types';
 import BinaryTechResonanceLogo from '../images/companies/1519887552228.jpeg';
 import ManurevaLogo from '../images/companies/manureva.png';
+import LtiMindtreeLogo from '../images/companies/LTIM.NS.png';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faMapMarkerAlt, faBuilding} from '@fortawesome/free-solid-svg-icons';
 import Scroll from 'react-scroll';
 
 const experienceRows = [
   {
+    key: 'lti-mindtree',
+    position: 'Specialist - Software Engineering',
+    company_name: 'LTIMindtree',
+    startYear: '2023',
+    startMonth: 'July',
+    endYear: '2023',
+    current: true,
+    short_description: `Work with the team to build versatile and 
+    highly scalable applications using latest/in-demand technologies by
+    writing the code clean/concise and re-usable. Writing Unit test cases
+    to avoid regresssion bugs and fucntional issues.
+    `,
+    location: 'Bengaluru, Karnataka, India',
+    image: LtiMindtreeLogo,
+    technologies: [
+      'HTML5',
+      'CSS3',
+      'JavaScript (ES6)',
+      'Angular',
+      'TypeScript',
+      'Sass',
+      'PHP',
+      'MySQL',
+      'Symfony',
+      'Docker',
+      'AWS S3',
+      'AWS EC2',
+      'AWS Cognito',
+      'AWS Dynamo DB',
+      'CI/CD',
+      'Postman',
+      'GitHub',
+      'Jira',
+    ],
+    // child: [] // TODO: To display Different roles within a same company
+  },
+  {
     key: 'manureva-digital-solutions',
-    position: 'Sr. Software Dev. / Technical Lead',
+    position: 'Technical Lead',
     company_name: 'Manureva Digital Solutions India Pvt. Ltd.',
     startYear: '2020',
     startMonth: 'April',
-    endYear: '2020',
-    current: true,
+    endYear: '2023',
+    current: false,
     short_description: `Entered Manureva as a "Senior Software Developer" with 
     hands-on coding experience. Worked on both web & mobile application(s) 
     development and finished each project within the timeline given which then 
