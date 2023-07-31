@@ -15,10 +15,10 @@ import {faLinkedin} from '@fortawesome/free-brands-svg-icons';
 const Contact = () => {
   return (
     <Scroll.Element name="contact-section">
-      <div className="container">
-        <div className="row">
-          <div className="col">
-            <div className="contact-section">
+      <div className="contact-section">
+        <div className="container">
+          <div className="row">
+            <div className="col">
               <SectionTitle sectionType="contact" />
 
               <div className="contact-container">
@@ -45,7 +45,7 @@ const Contact = () => {
                               target="_blank"
                               rel="noreferrer"
                               title="Send me a mail to
-                              silambu1821944@gmail.com">
+                          silambu1821944@gmail.com">
                               <h1>+91 77088 63236</h1>
                             </a>
                           </div>
@@ -60,7 +60,7 @@ const Contact = () => {
                               target="_blank"
                               rel="noreferrer"
                               title="Send me a mail to
-                              silambu1821944@gmail.com">
+                          silambu1821944@gmail.com">
                               <h1>silambu1821944</h1>
                             </a>
                           </div>
@@ -110,7 +110,7 @@ const Contact = () => {
                       </div>
                       <div className="contact-recommend-wrapper">
                         <h2 className="recommend-caption">
-                          Wanna give kudos to him ?
+                      Wanna give kudos to him ?
                         </h2>
                         <a href="https://www.linkedin.com/in/silambarasan-rd/details/recommendations/"
                           rel="noreferrer"
@@ -118,7 +118,7 @@ const Contact = () => {
                           className="btn btn-lg btn-outline-dark recommend-btn">
                           <FontAwesomeIcon icon={faLinkedin} />
                           <span className="ms-2">
-                            Recommend <strong>Silambarasan R</strong>
+                        Recommend <strong>Silambarasan R</strong>
                           </span>
                         </a>
                       </div>
