@@ -12,7 +12,7 @@ import {faHomeUser,
 } from '@fortawesome/free-solid-svg-icons';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import Scroll from 'react-scroll';
-import {useEffect, useContext} from 'react';
+import {useEffect, useContext, useState} from 'react';
 import PropTypes from 'prop-types';
 import {ThemeContext} from '../providers/Context';
 
@@ -22,6 +22,7 @@ const scrollSpy = Scroll.scrollSpy;
 
 const NavBar = ({changeCurrentTheme}) => {
   const currentTheme = useContext(ThemeContext);
+  const [navExpanded, setNavExpanded] = useState(false);
 
   useEffect(() => {
     scrollSpy.update();
@@ -36,8 +37,18 @@ const NavBar = ({changeCurrentTheme}) => {
     }
   };
 
+  const onNavToggle = (expand) => {
+    setNavExpanded(expand);
+  };
+
+  const closeNav = () => {
+    setNavExpanded(false);
+  };
+
   return (
     <Navbar variant={currentTheme}
+      onToggle={onNavToggle}
+      expanded={navExpanded}
       fixed='top'
       expand="lg">
       <Container className="position-relative">
@@ -45,6 +56,7 @@ const NavBar = ({changeCurrentTheme}) => {
         <Navbar.Collapse id="rds-toggle-navbar">
           <Nav className="justify-content-center flex-grow-1">
             <Nav.Link as={Scroll.Link} to='intro-section'
+              onClick={closeNav}
               activeClass="active" spy={true}>
               <div className="d-flex align-items-center">
                 <FontAwesomeIcon size="xs" icon={faHomeUser} />
@@ -52,6 +64,7 @@ const NavBar = ({changeCurrentTheme}) => {
               </div>
             </Nav.Link>
             <Nav.Link as={Scroll.Link} to='skills-section'
+              onClick={closeNav}
               activeClass="active" spy={true}>
               <div className="d-flex align-items-center">
                 <FontAwesomeIcon size="xs" icon={faLaptopCode} />
@@ -59,6 +72,7 @@ const NavBar = ({changeCurrentTheme}) => {
               </div>
             </Nav.Link>
             <Nav.Link as={Scroll.Link} to='experience-section'
+              onClick={closeNav}
               activeClass="active" spy={true}>
               <div className="d-flex align-items-center">
                 <FontAwesomeIcon size="xs" icon={faBuildingUser} />
@@ -66,6 +80,7 @@ const NavBar = ({changeCurrentTheme}) => {
               </div>
             </Nav.Link>
             <Nav.Link as={Scroll.Link} to='education-section'
+              onClick={closeNav}
               activeClass="active" spy={true}>
               <div className="d-flex align-items-center">
                 <FontAwesomeIcon size="xs" icon={faUserGraduate} />
@@ -73,6 +88,7 @@ const NavBar = ({changeCurrentTheme}) => {
               </div>
             </Nav.Link>
             <Nav.Link as={Scroll.Link} to='hobbies-section'
+              onClick={closeNav}
               activeClass="active" spy={true}>
               <div className="d-flex align-items-center">
                 <FontAwesomeIcon size="xs" icon={faPuzzlePiece} />
@@ -80,6 +96,7 @@ const NavBar = ({changeCurrentTheme}) => {
               </div>
             </Nav.Link>
             <Nav.Link as={Scroll.Link} to='contact-section'
+              onClick={closeNav}
               activeClass="active" spy={true}>
               <div className="d-flex align-items-center">
                 <FontAwesomeIcon size="xs" icon={faContactCard} />
