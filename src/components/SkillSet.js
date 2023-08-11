@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import '../styles/SkillSet.scss';
 import Html5Icon from '../images/skills/html5-logo.png';
 import Css3Icon from '../images/skills/css3-logo.png';
@@ -32,6 +32,8 @@ import PropTypes from 'prop-types';
 import SectionTitle from './SectionTitle';
 import Scroll from 'react-scroll';
 import SingleSkill from '../styled-components/SkillSet/SingleSkill';
+import {ThemeProvider} from 'styled-components';
+import {ThemeContext} from '../providers/Context';
 
 const skills = [
   {
@@ -261,8 +263,12 @@ const skills = [
 ];
 
 const SkillRow = ({skillRow}) => {
+  const currentTheme = useContext(ThemeContext);
+
   return <div className="col-md-3 col-12">
-    <SingleSkill skillRow={skillRow} />
+    <ThemeProvider theme={{currentTheme}}>
+      <SingleSkill skillRow={skillRow} />
+    </ThemeProvider>
   </div>;
 };
 

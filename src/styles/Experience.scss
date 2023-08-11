@@ -236,3 +236,91 @@
     }
   }
 }
+
+
+.dark {
+  .experience-section {
+  
+    .experience-container {
+  
+      &::before {
+        border-right-color: rgba(255, 255, 255, 0.5);
+      }
+  
+      .experience-row {
+        &:not(:last-child) {
+          @media (screen and max-width: 768px) {
+            &::after {
+              border-bottom-color: rgba(255,255,255, .6);
+            }
+          }
+        }
+  
+        .experience-duration {
+          &::after {
+            border-color: rgba(255, 255, 255, 0.8);
+            background-color: #045a82;
+          }
+  
+          .start-year {
+            color: #d74a2f;
+  
+            .start-month {
+              color: #f5f5f5;
+            }
+          }
+  
+          .till-date {
+            color: #f5f5f5;
+
+            &::before {
+              background-image: url("../images/arrow_120w.png");
+            }
+          }
+        }
+  
+        .experience-tech-icon {
+          img.experience-tech-image {
+          }
+        }
+  
+        .experience-detail {
+          
+          .experience-title {
+
+          }
+  
+          .experience-company-detail {
+
+            .company-title {
+              .company-icon {
+                color: #bee1ff;
+              }
+            }
+  
+            .company-location {
+              .location-icon {
+                color: #e75c5d;
+              }
+            }
+          }
+  
+          .experience-description-container {
+            .short-description {
+              color: #cdcdcd;
+            }
+          }
+  
+          .experience-tech-detail {
+            .technologies-list {
+  
+              .tech-row {
+
+              }
+            }
+          }
+        }
+      }
+    }
+  }  
+}

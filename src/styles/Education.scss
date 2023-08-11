@@ -187,3 +187,71 @@
     }
   }
 }
+
+.dark {
+  .education-section {
+    .education-container {
+      &::before {
+        border-right-color: rgba(255, 255, 255, 0.5);
+      }
+  
+      .education-row {
+        &:not(:last-child) {
+          @media (screen and max-width: 768px) {
+            &::after {
+              border-bottom-color: rgba(255,255,255, .6);
+            }
+          }
+        }
+  
+        .education-duration {
+          &::after {
+            border-color: rgba(255, 255, 255, 0.8);
+            background-color: #045a82;
+          }
+  
+          .start-year, .end-year {
+          }
+  
+          .year-separator {
+            width: 100%;
+  
+            &::before {
+              background-color: rgba(255, 255, 255, 0.8);
+            }
+          }
+        }
+  
+        .education-tech-icon {
+          img.education-tech-image {
+          }
+        }
+  
+        .education-detail {
+          .education-title {
+          }
+  
+          .education-company-detail {
+            .company-title {
+              .company-icon {
+                color: #bee1ff;
+              }
+            }
+  
+            .company-location {
+              .location-icon {
+                color: #e75c5d;
+              }
+            }
+          }
+  
+          .education-description-container {
+            .short-description {
+              color: #cdcdcd;
+            }
+          }
+        }
+      }
+    }
+  }
+}

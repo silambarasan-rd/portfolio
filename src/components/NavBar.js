@@ -12,19 +12,32 @@ import {faHomeUser,
 } from '@fortawesome/free-solid-svg-icons';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import Scroll from 'react-scroll';
-import {useEffect} from 'react';
+import {useEffect, useContext} from 'react';
+import PropTypes from 'prop-types';
+import {ThemeContext} from '../providers/Context';
 
 const resumePdf = require('../resume/silambarasan-resume-2023.pdf');
 
 const scrollSpy = Scroll.scrollSpy;
 
-const NavBar = () => {
+const NavBar = ({changeCurrentTheme}) => {
+  const currentTheme = useContext(ThemeContext);
+
   useEffect(() => {
     scrollSpy.update();
   }, []);
 
+  const onThemeChange = (event) => {
+    // Checked - Dark, Not Checked - Light
+    if (event.target.checked) {
+      changeCurrentTheme('dark');
+    } else {
+      changeCurrentTheme('light');
+    }
+  };
+
   return (
-    <Navbar variant="dark"
+    <Navbar variant={currentTheme}
       fixed='top'
       expand="lg">
       <Container className="position-relative">
@@ -83,9 +96,25 @@ const NavBar = () => {
             <span className="ms-2">Download Resume</span>
           </div>
         </Nav.Link>
+        <Nav.Item target="_blank"
+          className="change-theme"
+          title={'Change Dark/Light theme'}>
+          <label htmlFor='appThemeSwitch'>
+            <input type='checkbox' checked={currentTheme === 'dark'}
+              id='appThemeSwitch'
+              onChange={onThemeChange} />
+            <span className={`checkmark ${currentTheme}`}>
+            </span>
+          </label>
+        </Nav.Item>
       </Container>
     </Navbar>
   );
+};
+
+NavBar.propTypes = {
+  currentTheme: PropTypes.oneOf(['dark', 'light']),
+  changeCurrentTheme: PropTypes.func,
 };
 
 export default NavBar;

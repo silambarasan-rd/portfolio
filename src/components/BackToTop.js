@@ -1,10 +1,12 @@
-import React, {useState} from 'react';
+import React, {useState, useContext} from 'react';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faArrowCircleUp} from '@fortawesome/free-solid-svg-icons';
 import '../styles/BackToTop.scss';
+import {ThemeContext} from '../providers/Context';
 
 const BackToTop = () => {
   const [visible, setVisible] = useState(false);
+  const currentTheme = useContext(ThemeContext);
 
   const toggleVisible = () => {
     const scrolled = document.documentElement.scrollTop;
@@ -28,9 +30,12 @@ const BackToTop = () => {
 
   return (
     <div className="back-to-top-container">
-      {visible ? <button className="back-to-top btn btn-dark"
+      {visible ? <button
+        className={
+          `back-to-top btn btn-${currentTheme === 'dark' ? 'light' : 'dark'}`}
         onClick={scrollToTop}>
-        <FontAwesomeIcon icon={faArrowCircleUp} color={'#fff'}/>
+        <FontAwesomeIcon icon={faArrowCircleUp}
+          color={currentTheme === 'dark' ? '#000' : '#fff'}/>
       </button> : null}
     </div>
   );

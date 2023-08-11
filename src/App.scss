@@ -1,5 +1,8 @@
 @import "~bootstrap/scss/bootstrap";
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap');
+@import "~@fortawesome/fontawesome-free/css/fontawesome.css";
+@import "~@fortawesome/fontawesome-free/css/brands.css";
+@import "~@fortawesome/fontawesome-free/css/solid.css";
 
 @font-face {
   font-family: 'Vanilla Twilight Script';
@@ -17,12 +20,6 @@
 
 body {
   font-family: 'Source Sans Pro', sans-serif;
-  background-color: #9EB3C2;
-
-  background-image: url("./images/light_noise_diagonal.png");
-  background-repeat: repeat repeat;
-  background-size: 150px;
-  background-blend-mode: overlay;
 }
 
 // Custom Selection Color
@@ -55,4 +52,33 @@ body {
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: #065a82;
+}
+
+.portfolio-main {
+  background-image: url("./images/light_noise_diagonal.png");
+  background-repeat: repeat repeat;
+  background-size: 150px;
+
+  &.light {
+    color: #000;
+    background-color: #9EB3C2;
+    background-blend-mode: overlay;
+  }
+
+  &.dark {
+    color: #fff;
+    background-color: #0b1115;
+    background-blend-mode: soft-light;
+
+    // Custom Selection Color
+    ::-moz-selection {
+      color: #22353e;
+      background-color: #f6cf52;
+    }
+
+    ::selection {
+      color: #22353e;
+      background-color: #f6cf52;
+    }
+  }
 }

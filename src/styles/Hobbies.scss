@@ -70,3 +70,41 @@
     }
   }
 }
+
+.dark {
+  .hobbies-section {
+    .hobbies-container {  
+      .hobby-row {
+        border-color: rgba(255,255,255,0.1);
+
+        .hobby-icon {
+          img.hobby-image {
+          }
+        }
+  
+        .hobby-detail {
+          .hobby-title {
+          }
+  
+          .hobby-sub-title {
+          }
+        }
+  
+        &:hover {
+          background-color: #edf8ff;
+          border-color: #aebfc6;
+  
+          .hobby-detail {
+            .hobby-title {
+              color: #065a82;
+            }
+  
+            .hobby-sub-title {
+              color: #1C7293;
+            }
+          }
+        }
+      }
+    }
+  }
+}

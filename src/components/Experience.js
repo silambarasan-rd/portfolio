@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import '../styles/Experience.scss';
 import SectionTitle from './SectionTitle';
 import PropTypes from 'prop-types';
@@ -8,6 +8,7 @@ import LtiMindtreeLogo from '../images/companies/LTIM.NS.png';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faMapMarkerAlt, faBuilding} from '@fortawesome/free-solid-svg-icons';
 import Scroll from 'react-scroll';
+import {ThemeContext} from '../providers/Context';
 
 const experienceRows = [
   {
@@ -127,7 +128,14 @@ const experienceRows = [
 ];
 
 const Technology = ({technology}) => {
-  return (<span className="tech-row badge bg-secondary ms-1">
+  const currentTheme = useContext(ThemeContext);
+
+  return (<span
+    className={
+      `tech-row badge 
+      ${currentTheme === 'light' ? 'bg-secondary' : 'bg-light text-dark'} 
+      ms-1`
+    }>
     {technology}
   </span>);
 };

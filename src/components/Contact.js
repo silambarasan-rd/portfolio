@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import '../styles/Contact.scss';
 import SectionTitle from './SectionTitle';
 import GmailIcon from '../images/contact/contact-gmail-logo.svg';
@@ -11,8 +11,11 @@ import CuddaloreMap from '../images/contact/India_Tamil_Nadu_Cuddalore_district.
 import Scroll from 'react-scroll';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faLinkedin} from '@fortawesome/free-brands-svg-icons';
+import {ThemeContext} from '../providers/Context';
 
 const Contact = () => {
+  const currentTheme = useContext(ThemeContext);
+
   return (
     <Scroll.Element name="contact-section">
       <div className="contact-section">
@@ -38,7 +41,8 @@ const Contact = () => {
                         <div className="contact-row">
                           <div className="contact-image-container">
                             <img src={MobileIcon}
-                              className="contact-image" alt="Mobile" />
+                              className="contact-image dark-invert"
+                              alt="Mobile" />
                           </div>
                           <div className="contact-detail">
                             <a href="tel: +91 77088 63236"
@@ -68,7 +72,8 @@ const Contact = () => {
                         <div className="contact-row">
                           <div className="contact-image-container">
                             <img src={GitHubIcon}
-                              className="contact-image" alt="GitHub" />
+                              className="contact-image dark-invert"
+                              alt="GitHub" />
                           </div>
                           <div className="contact-detail">
                             <a href="https://github.com/silambarasan-rd"
@@ -115,7 +120,11 @@ const Contact = () => {
                         <a href="https://www.linkedin.com/in/silambarasan-rd/details/recommendations/"
                           rel="noreferrer"
                           target="_blank"
-                          className="btn btn-lg btn-outline-dark recommend-btn">
+                          className={`btn btn-lg 
+                            ${currentTheme === 'light' ?
+                              'btn-outline-dark' :
+                              'btn-outline-light'} 
+                            recommend-btn`}>
                           <FontAwesomeIcon icon={faLinkedin} />
                           <span className="ms-2">
                         Recommend <strong>Silambarasan R</strong>

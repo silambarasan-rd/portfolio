@@ -100,6 +100,7 @@
         @media (screen and max-width: 768px) {
           flex-direction: column;
           margin-top: .5em;
+          padding: 0 1em;
         }
 
         .recommend-caption {
@@ -111,6 +112,52 @@
           @media (screen and max-width: 768px) {
             margin-top: .5em;
             margin-bottom: .8em;
+          }
+        }
+      }
+    }
+  }
+}
+
+.dark {
+  .contact-section {
+    .contact-container {  
+      .contact-left-container {
+        .map-container {  
+          border-color: rgba(255,255,255,1);
+          box-shadow: 0 4px 5px 0 rgba(255,255,255, .3);
+  
+          .map-frame {
+          }
+        }
+      }
+  
+      .contact-right-container {
+        .contact-details-wrapper {
+          .contact-row {
+            .contact-image-container {
+              .contact-image {
+                &.dark-invert {
+                  filter: invert(1);
+                }
+              }
+            }
+  
+            .contact-detail {
+              a {
+                color: #fff;
+                h1 {
+                }
+              }
+            }
+          }
+        }
+  
+        .contact-recommend-wrapper {
+          .recommend-caption {
+          }
+  
+          .recommend-btn {
           }
         }
       }

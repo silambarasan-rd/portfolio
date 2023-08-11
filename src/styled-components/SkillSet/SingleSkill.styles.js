@@ -25,7 +25,8 @@ export const SkillProgress = styled.div.attrs({
   height: 4px;
   position: relative;
   overflow: visible;
-  background-color: #94a3af33;
+  background-color: ${
+  (props) => props.theme.currentTheme === 'light' ? '#94a3af33' : '#ffffff61'};
 `;
 
 export const SkillProgressFilled = styled.div.attrs({
@@ -35,7 +36,8 @@ export const SkillProgressFilled = styled.div.attrs({
   'aria-valuemin': 0,
   'aria-valuemax': 100,
 })`
-  background-color: #465164;
+  background-color: ${
+  (props) => props.theme.currentTheme === 'light' ? '#465164' : '#f5f5f5'};
   width: ${({capacityPercent}) => capacityPercent};
 `;
 
@@ -58,7 +60,10 @@ export const SkillRow = styled.div`
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  border: 1px solid rgba(0,0,0,0.1);
+  border: ${
+  (props) => props.theme.currentTheme === 'light' ?
+      '1px solid rgba(0,0,0,0.1)' :
+      '1px solid rgba(255,255,255,0.1)'};
   border-bottom-width: 4px;
   border-right-width: 2px;
   border-radius: 4px;
@@ -67,8 +72,12 @@ export const SkillRow = styled.div`
   cursor: pointer;
   transition: 0.18s linear all;
   &:hover {
-    background-color: #d4dde3;
-    border-color: #065a82;
+    background-color: ${
+  (props) =>
+      props.theme.currentTheme === 'light' ? '#d4dde3' : '#edf8ff'};
+    border-color: ${
+  (props) =>
+      props.theme.currentTheme === 'light' ? '#065a82' : '#aebfc6'};
   }
 
   &:hover ${SkillTitle} {
@@ -76,7 +85,10 @@ export const SkillRow = styled.div`
   }
 
   &:hover ${SkillProgress} {
-    background-color: rgba(255, 255, 255, .45);
+    background-color: ${(props) =>
+      props.theme.currentTheme === 'light' ?
+        'rgba(255, 255, 255, .45)' :
+          'rgba(0, 0, 0, .15)'};
   }
 
   &:hover ${SkillProgressFilled} {
