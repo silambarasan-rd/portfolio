@@ -110,16 +110,34 @@
       align-items: center;
       border-radius: 50%;
 
+      overflow: hidden;
+
+      &::after {
+        content: "";
+        display: block;        
+      }
+
       &::before {
         content: "";
         font-family: "Font Awesome 6 Free", sans-serif;
         font-size: .9em;
         display: block;
+
+        animation-name: pullFromTop;
+        animation-duration: 1s;
+        animation-timing-function: ease-out;
       }
 
       &.light::before {
         content: "\f185";
-        color: #1C7293;
+        background: #fffe15;
+        background: radial-gradient(#fffe15 0%, #ffa500 40%, #ff6e00 80%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+
+        animation-name: pullFromBottom;
+        animation-duration: 1s;
+        animation-timing-function: ease-out;
       }
 
       &.dark::before {
@@ -135,8 +153,28 @@
     }
 
     &:checked + .checkmark {
-      background-color: #000;
+      background-color: #14123a;
     }
+  }
+}
+
+@keyframes pullFromBottom {
+  0% {
+    transform: translateY(50px);
+  }
+  50% {
+    animation-timing-function: ease-out;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pullFromTop {
+  0% {
+    transform: translateY(-50px);
+  }
+  50% {
+    animation-timing-function: ease-out;
+    transform: translateY(0);
   }
 }
 
