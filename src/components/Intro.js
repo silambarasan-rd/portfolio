@@ -81,8 +81,8 @@ const Intro = () => {
                       </span>
                       <span>Software Engineer based in India,</span>
                       <span>
-                        &nbsp;who develops high quality and end-to-end
-                        software application / mobile application.
+                        &nbsp;has expertise in developing versatile and
+                        end-to-end software applications & mobile applications.
                       </span><br/>
                       <span>
                       &nbsp;Loves reading adventure books,
@@ -91,10 +91,20 @@ const Intro = () => {
                       <span>
                       &nbsp;Curious to learn a piece of
                       new information each day.
-                      </span>
-                      <span>
-                        &nbsp;Believes in &quot;Earth is not only
-                        belong to Humans&quot;
+                      </span><br/>
+                      <span
+                        className="align-items-center
+                                align-items-md-start
+                                flex-column
+                                flex-md-row
+                                justify-content-center
+                                quotation"
+                      >
+                        Believes in <blockquote>
+                          <span className="fa fa-quote-left"></span>
+                          Earth is not for
+                          Humans only<span className="fa fa-quote-right"></span>
+                        </blockquote>
                       </span>
                     </h1>
                   </div>
