@@ -1,14 +1,10 @@
-import Intro from './components/Intro';
 import './App.scss';
-import SkillSet from './components/SkillSet';
-import Experience from './components/Experience';
-import Hobbies from './components/Hobbies';
-import Contact from './components/Contact';
-import NavBar from './components/NavBar';
-import BackToTop from './components/BackToTop';
-import Education from './components/Education';
 import {useState} from 'react';
 import {ThemeContext} from './providers/Context';
+import {BrowserRouter, Route, Routes} from 'react-router-dom';
+import About from './pages/About';
+import Home from './pages/Home';
+import PageLayout from './layouts/PageLayout';
 
 const APP_THEME_STORAGE_KEY = 'APP_THEME';
 
@@ -45,14 +41,20 @@ function App() {
   return (
     <ThemeContext.Provider value={theme}>
       <div className={`portfolio-main ${theme}`}>
-        <NavBar changeCurrentTheme={changeCurrentTheme} />
-        <Intro />
-        <SkillSet />
-        <Experience />
-        <Education />
-        <Hobbies />
-        <Contact />
-        <BackToTop />
+        <BrowserRouter>
+          <Routes>
+            <Route element={
+              <PageLayout pageType="home"
+                changeTheme={changeCurrentTheme} />}>
+              <Route path="/" element={<Home />} />
+            </Route>
+            <Route element={
+              <PageLayout pageType="others"
+                changeTheme={changeCurrentTheme} />}>
+              <Route path="about" element={<About />} />
+            </Route>
+          </Routes>
+        </BrowserRouter>
       </div>
     </ThemeContext.Provider>
   );

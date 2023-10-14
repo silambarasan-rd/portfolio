@@ -1,5 +1,5 @@
 import React, {useContext} from 'react';
-import '../styles/Experience.scss';
+import '../styles/Home/Experience.scss';
 import SectionTitle from './SectionTitle';
 import PropTypes from 'prop-types';
 import BinaryTechResonanceLogo from '../images/companies/1519887552228.jpeg';

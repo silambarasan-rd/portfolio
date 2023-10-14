@@ -1,5 +1,5 @@
 import React, {useContext} from 'react';
-import '../styles/SkillSet.scss';
+import '../styles/Home/SkillSet.scss';
 import Html5Icon from '../images/skills/html5-logo.png';
 import Css3Icon from '../images/skills/css3-logo.png';
 import JavascriptIcon from '../images/skills/javascript-logo.png';

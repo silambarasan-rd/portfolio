@@ -1,9 +1,10 @@
 import React, {useEffect, useState} from 'react';
 import SilambarasanPicture from
   './../images/silambarasan-rd-senior-software-engineer.png';
-import '../styles/Intro.scss';
+import '../styles/Home/Intro.scss';
 import Scroll from 'react-scroll';
 import {Image} from 'react-bootstrap';
+import {NavLink} from 'react-router-dom';
 
 const TYPES_OF_ENGINEER = [
   {
@@ -107,6 +108,18 @@ const Intro = () => {
                         </blockquote>
                       </span>
                     </h1>
+                    <div className="d-flex justify-content-end">
+                      <NavLink
+                        className="text-secondary
+                          text-decoration-none
+                          d-flex
+                          align-items-center"
+                        title="Read more about Silambarasan R
+                          (Specialist Software Engineer)"
+                        to="/about">
+                        <span className="ms-1">🤔 Hmm... Read more</span>
+                      </NavLink>
+                    </div>
                   </div>
                 </div>
               </div>

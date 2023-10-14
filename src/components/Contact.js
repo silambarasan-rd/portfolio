@@ -1,5 +1,5 @@
 import React, {useContext} from 'react';
-import '../styles/Contact.scss';
+import '../styles/Home/Contact.scss';
 import SectionTitle from './SectionTitle';
 import GmailIcon from '../images/contact/contact-gmail-logo.svg';
 import GitHubIcon from '../images/contact/contact-github.svg';

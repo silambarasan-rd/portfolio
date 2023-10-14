@@ -135,7 +135,7 @@
             left: -32px;
             top: -8px;
             z-index: 999;
-            background-image: url("../images/arrow_120w.png");
+            background-image: url("../../images/arrow_120w.png");
             background-size: contain;
             background-repeat: no-repeat;
             background-position: center;
@@ -274,7 +274,7 @@
             color: #f5f5f5;
 
             &::before {
-              background-image: url("../images/arrow_120w.png");
+              background-image: url("../../images/arrow_120w.png");
             }
           }
         }

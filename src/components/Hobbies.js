@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/Hobbies.scss';
+import '../styles/Home/Hobbies.scss';
 import ListenMusicIcon from '../images/hobbies/listen-music.jpg';
 import GuitarIcon from '../images/hobbies/playing-guitar.jpg';
 import PencilSketchIcon from '../images/hobbies/pencil-sketch.jpg';

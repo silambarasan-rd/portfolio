@@ -1,0 +1,127 @@
+.about-container {
+  display: flex;
+  align-items: center;
+  padding-top: 4em;
+
+  @media (screen and min-width: 768px) {
+    min-height: 100vh;
+    padding-top: 0;
+  }
+
+  .about-picture-wrapper {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .about-picture {
+      height: auto;
+      width: 82%;
+
+      @media (screen and min-width: 768px) {
+        height: auto;
+        width: 100%;
+      }
+    }
+  }
+
+  .about-greetings {
+    display: block;
+    position: relative;
+    text-align: center;
+    margin-bottom: 0.5em;
+
+    @media (screen and min-width: 768px) {
+      margin-bottom: 1.5em;
+    }
+
+    .greeting-text {
+      font-family: 'Source Sans Pro', sans-serif;
+      text-align: center;
+      line-height: 1em;
+      font-size: 2.5em;
+      font-weight: 800;
+
+      @media (screen and min-width: 1100px) {
+        font-size: 3.5em;
+      }
+    }
+
+    .greeting-sub-text {
+      font-family: 'Source Sans Pro', sans-serif;
+      text-align: center;
+      font-weight: 300;
+    }
+  }
+
+  .about-content-body {
+    min-height: 100vh;
+    height: auto;
+    overflow-y: auto;
+
+    &::-webkit-scrollbar {
+      width: 4px !important;  /* Remove scrollbar space */
+      background: transparent  !important;  /* Optional: just make scrollbar invisible */
+    }
+
+    @media (screen and min-width: 768px) {
+      min-height: 350px;
+      height: 350px;
+      overflow-y: scroll;
+
+      -ms-overflow-style: none;  /* Internet Explorer 10+ */
+      scrollbar-width: none;  /* Firefox */
+    }
+  
+    .about-description {
+      font-family: 'Source Sans Pro', sans-serif;
+      text-align: center;
+      font-size: 1.5em;
+      font-weight: 400;
+      line-height: 1.5em;
+
+      .play-button-container {
+        margin-left: .2em;
+        display: inline-flex;
+        cursor: pointer;
+
+        svg {
+          color: #de4f3d;
+        }
+      }
+  
+      .quotation {
+        font-weight: 200;
+        display: inline-flex;
+  
+        blockquote {
+          display: inline-flex;
+          font-style: italic;
+          font-weight: 400;
+  
+          position: relative;
+          padding-left: 0.4em;
+  
+          .fa {
+            font-size: .4em;
+            position: relative;
+            top: 0.2em;
+  
+            &.fa-quote-left {
+              margin-right: .1em;
+            }
+  
+            &.fa-quote-right {
+              margin-left: .4em;
+            }
+          }
+        }
+      }
+  
+      @media (screen and min-width: 1100px) {
+        font-size: 1.6em;
+        font-weight: 400;
+      }
+    }
+  }
+}

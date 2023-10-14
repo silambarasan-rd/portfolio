@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/Education.scss';
+import '../styles/Home/Education.scss';
 import SectionTitle from './SectionTitle';
 import PropTypes from 'prop-types';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
