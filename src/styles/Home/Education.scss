@@ -1,13 +1,12 @@
 .education-section {
   position: relative;
-  padding: 4em 0;
-  height: 100vh;
+  padding: 2em 0;
+  height: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
 
   @media (screen and max-width: 768px) {
-    height: auto !important;
     padding: 2em 0;
   }
 
