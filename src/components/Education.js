@@ -8,20 +8,22 @@ import {faMapMarkerAlt,
 import Scroll from 'react-scroll';
 
 const educationRows = [
-  // {
-  //   key: 'master-of-computer-applications',
-  //   field_of_study: 'Master of Computer Applications (DDE)',
-  //   institution_name: `Annamalai University`,
-  //   startYear: '2023',
-  //   endYear: '-',
-  //   location: 'Chidambaram, Tamilnadu, India',
-  // },
+  {
+    key: 'master-of-computer-science',
+    field_of_study: 'Master of Computer Science (DDE)',
+    institution_name: `Annamalai University`,
+    startYear: '2023',
+    endYear: '-',
+    completed: false,
+    location: 'Chidambaram, Tamilnadu, India',
+  },
   {
     key: 'bachelor-of-computer-applications',
     field_of_study: 'Bachelor of Computer Applications',
     institution_name: `St. Joseph\'s College of Arts & Science (Autonomous)`,
     startYear: '2014',
     endYear: '2017',
+    completed: true,
     location: 'Cuddalore, Tamilnadu, India',
   },
   {
@@ -30,6 +32,7 @@ const educationRows = [
     institution_name: 'St. Joseph\'s Higher Secondary School',
     startYear: '2006',
     endYear: '2014',
+    completed: true,
     location: 'Cuddalore, Tamilnadu, India',
   },
 ];
@@ -59,6 +62,19 @@ const EducationRow = ({educationRow}) => {
       <div className="education-detail">
         <h2 className="education-title">
           {educationRow.field_of_study}
+          <span className="ms-2"
+            title={
+              educationRow.completed ?
+                `Completed in ${educationRow.endYear}` :
+                  'Persuing'
+            }
+          >
+            {
+              educationRow.completed ?
+                <i className="fa fa-2xs fa-graduation-cap text-success"></i> :
+                  <i className="fa fa-2xs fa-arrow-trend-up text-secondary"></i>
+            }
+          </span>
         </h2>
         <div className="education-company-detail">
           <h5 className="company-title">
@@ -86,6 +102,7 @@ EducationRow.propTypes = {
     short_description: PropTypes.string,
     startYear: PropTypes.string,
     endYear: PropTypes.string,
+    completed: PropTypes.bool,
     location: PropTypes.string,
   }).isRequired,
 };
