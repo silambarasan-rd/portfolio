@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import {Image} from 'react-bootstrap';
 import SilambarasanPicture from
-  '../../images/silambarasan-rd-white-flowered.png';
+  '../../images/astronaut-rds-circle.png';
 import '../../styles/About/index.scss';
 import {faPlayCircle,
   faPauseCircle} from '@fortawesome/free-solid-svg-icons';
