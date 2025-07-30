@@ -19,7 +19,7 @@ import PropTypes from 'prop-types';
 import {ThemeContext} from '../providers/Context';
 import {NavLink} from 'react-router-dom';
 
-const resumePdf = require('../resume/silambarasan-resume-2023.pdf');
+const resumePdf = require('../resume/silambarasan-r-resume.pdf');
 
 const scrollSpy = Scroll.scrollSpy;
 
