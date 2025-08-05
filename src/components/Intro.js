@@ -2,22 +2,25 @@ import React, {useEffect, useState} from 'react';
 import SilambarasanPicture from
   './../images/silambarasan-rd-senior-software-engineer.png';
 import '../styles/Home/Intro.scss';
+import '../styles/Home/IntroHighlights.scss';
 import Scroll from 'react-scroll';
 import {Image} from 'react-bootstrap';
 import {NavLink} from 'react-router-dom';
+import {motion} from 'framer-motion';
+import {useStaggerAnimation} from '../hooks/useScrollAnimation';
 
 const TYPES_OF_ENGINEER = [
   {
-    label: 'Exceptional',
-    value: 'exceptional',
+    label: 'Passionate',
+    value: 'passionate',
   },
   {
-    label: 'Encouraged',
-    value: 'encouraged',
+    label: 'Creative',
+    value: 'creative',
   },
   {
-    label: 'Experienced',
-    value: 'experienced',
+    label: 'Dedicated',
+    value: 'dedicated',
   },
 ];
 const DEFAULT_TYPE_OF_ENGINEER = 3; // 1 based Index
@@ -40,10 +43,37 @@ const EngineerType = () => {
     };
   }, []);
 
-  return <div className="d-inline">
-    <span className="position-absolute fw-bolder" key={engineerType}>
+  return <div className="d-inline engineer-type-container">
+    <motion.span
+      className="position-absolute fw-bolder engineer-type-text"
+      key={engineerType}
+      initial={{
+        opacity: 0,
+        rotateX: -90,
+        transformOrigin: 'center bottom',
+      }}
+      animate={{
+        opacity: 1,
+        rotateX: 0,
+        transformOrigin: 'center bottom',
+      }}
+      exit={{
+        opacity: 0,
+        rotateX: 90,
+        transformOrigin: 'center top',
+      }}
+      transition={{
+        duration: 0.8,
+        ease: 'easeInOut',
+        rotateX: {
+          type: 'spring',
+          stiffness: 100,
+          damping: 15,
+        },
+      }}
+    >
       {TYPES_OF_ENGINEER[engineerType-1].label}
-    </span>
+    </motion.span>
     <div className="invisible d-inline pe-2 pe-md-3">
       {TYPES_OF_ENGINEER[engineerType-1].label}
     </div>
@@ -59,67 +89,106 @@ const Intro = () => {
             <div className="intro-container">
               <div className="row">
                 <div className="col-md-4">
-                  <div className="intro-picture-wrapper">
-                    <Image src={SilambarasanPicture}
-                      className="intro-picture" />
-                  </div>
+                  <motion.div
+                    className="intro-picture-wrapper"
+                    {...useStaggerAnimation(0.2)}
+                  >
+                    <Image
+                      src={SilambarasanPicture}
+                      className="intro-picture"
+                    />
+                  </motion.div>
                 </div>
                 <div className="col-md-8">
                   <div
-                    className="d-flex flex-column justify-content-center h-100">
-                    <div className="intro-greetings">
-                      <h1 className="greeting-text">
+                    className="d-flex flex-column
+                    justify-content-center h-100"
+                  >
+                    <motion.div
+                      className="intro-greetings"
+                      {...useStaggerAnimation(0.4)}
+                    >
+                      <motion.h1
+                        className="greeting-text"
+                        {...useStaggerAnimation(0.6)}
+                      >
                         Hi, I&apos;m Silambarasan
-                      </h1>
-                      <h4 className="greeting-sub-text">
+                      </motion.h1>
+                      <motion.h4
+                        className="greeting-sub-text"
+                        {...useStaggerAnimation(0.8)}
+                      >
                         <span>Glad you&apos;re here!</span>
                         <span>&nbsp;Please take a look around</span>
-                      </h4>
-                    </div>
-                    <h1 className="intro-description">
-                      <span className="position-relative">
-                      An <EngineerType />
-                      </span>
-                      <span>Software Engineer based in India,</span>
-                      <span>
-                        &nbsp;has expertise in developing versatile and
-                        end-to-end software applications & mobile applications.
-                      </span><br/>
-                      <span>
-                      &nbsp;Loves reading adventure books,
-                      sketching, listening to music and playing PC games.
-                      </span><br/>
-                      <span>
-                      &nbsp;Curious to learn a piece of
-                      new information each day.
-                      </span><br/>
-                      <span
-                        className="align-items-center
-                                align-items-md-start
-                                flex-column
-                                flex-md-row
-                                justify-content-center
-                                quotation"
+                      </motion.h4>
+                    </motion.div>
+                    <motion.h1
+                      className="intro-description"
+                      {...useStaggerAnimation(1.0)}
+                    >
+                      <motion.div
+                        className="position-relative"
+                        {...useStaggerAnimation(0.8)}
                       >
-                        Believes in <blockquote>
-                          <span className="fa fa-quote-left"></span>
-                          Earth is not for
-                          Humans only<span className="fa fa-quote-right"></span>
+                        <motion.span>A </motion.span>
+                        <EngineerType />
+                      </motion.div>
+                      <motion.span {...useStaggerAnimation(0.8)}>
+                        Software Engineer from India, specializing in full-stack
+                        web and mobile application development.
+                      </motion.span>
+                      <br/>
+                      <motion.span {...useStaggerAnimation(0.8)}>
+                        Passionate about adventure books, sketching, music, and
+                        gaming. Always curious to discover something new daily.
+                      </motion.span>
+                      <br/>
+                      <motion.div
+                        className="intro-highlights mt-3"
+                        {...useStaggerAnimation(1.0)}
+                      >
+                        <motion.span className="highlight-item me-4">
+                          🚀 25+ Projects Delivered
+                        </motion.span>
+                        <motion.span className="highlight-item me-4">
+                          💼 8+ Years Experience
+                        </motion.span>
+                        <motion.span className="highlight-item">
+                          🌟 Full-Stack Expert
+                        </motion.span>
+                      </motion.div>
+                      <motion.span
+                        className={
+                          'quotation d-flex align-items-center ' +
+                          'align-items-md-start flex-column flex-md-row ' +
+                          'justify-content-center'
+                        }
+                        {...useStaggerAnimation(0.8)}
+                      >
+                        Believes in
+                        <blockquote>
+                          <span className="fa fa-quote-left"/>
+                          Earth is not for Humans only
+                          <span className="fa fa-quote-right"/>
                         </blockquote>
-                      </span>
-                    </h1>
-                    <div className="d-flex justify-content-end">
+                      </motion.span>
+                    </motion.h1>
+                    <motion.div
+                      className="d-flex justify-content-end"
+                      {...useStaggerAnimation(1.2)}
+                    >
                       <NavLink
-                        className="text-secondary
+                        className={`text-secondary
                           text-decoration-none
                           d-flex
-                          align-items-center"
+                          align-items-center`}
                         title="Read more about Silambarasan R
                           (Specialist Software Engineer)"
-                        to="/about">
+                        to="/about"
+                      >
                         <span className="ms-1">🤔 Hmm... Read more</span>
                       </NavLink>
-                    </div>
+                    </motion.div>
                   </div>
                 </div>
               </div>

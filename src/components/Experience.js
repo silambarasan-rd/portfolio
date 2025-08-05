@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 import BinaryTechResonanceLogo from '../images/companies/1519887552228.jpeg';
 import ManurevaLogo from '../images/companies/manureva.png';
 import LtiMindtreeLogo from '../images/companies/LTIM.NS.png';
+import {motion} from 'framer-motion';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faMapMarkerAlt, faBuilding} from '@fortawesome/free-solid-svg-icons';
 import Scroll from 'react-scroll';
@@ -13,17 +14,16 @@ import {ThemeContext} from '../providers/Context';
 const experienceRows = [
   {
     key: 'lti-mindtree',
-    position: 'Specialist - Software Engineering',
+    position: 'Specialist - Software Engineering - Product Engineer',
     company_name: 'LTIMindtree',
     startYear: '2023',
     startMonth: 'July',
     endYear: '2023',
     current: true,
-    short_description: `Work with the team to build versatile and 
-    highly scalable applications using latest/in-demand technologies by
-    writing the code clean/concise and re-usable. Writing Unit test cases
-    to avoid regresssion bugs and fucntional issues.
-    `,
+    short_description: 'Work with the team to build versatile and ' +
+      'highly scalable applications using latest/in-demand technologies by ' +
+      'writing the code clean/concise and re-usable. Writing Unit test cases ' +
+      'to avoid regresssion bugs and fucntional issues.',
     location: 'Bengaluru, Karnataka, India',
     image: LtiMindtreeLogo,
     technologies: [
@@ -56,10 +56,11 @@ const experienceRows = [
     startMonth: 'April',
     endYear: '2023',
     current: false,
-    short_description: `Entered Manureva as a "Senior Software Developer" with 
-    hands-on coding experience. Worked on both web & mobile application(s) 
-    development and finished each project within the timeline given which then 
-    helped me to get promoted as a "Technical Lead".`,
+    short_description: 'Entered Manureva as a "Senior Software Developer" ' +
+      'with hands-on coding experience. Worked on both web & mobile ' +
+      'application(s) development and finished each project within the ' +
+      'timeline given which then helped me to get promoted as a ' +
+      '"Technical Lead".',
     location: 'Puducherry, India',
     image: ManurevaLogo,
     technologies: [
@@ -94,16 +95,16 @@ const experienceRows = [
   },
   {
     key: 'binary-tech-resonance',
-    position: 'Senior PHP Developer',
+    position: 'Software Developer',
     company_name: 'Binary Tech Resonance Pvt. Ltd.',
     startYear: '2017',
     startMonth: 'June',
     endYear: '2020',
     current: false,
-    short_description: `Started my journey in the software industry 
-    as a "Junior PHP Developer", For the first 2-3 months I struggled to 
-    adapt myself but I worked hard to learn new technologies then gradually
-    everything changed and it became second nature.`,
+    short_description: 'Started my journey in the software industry ' +
+      'as a "Junior PHP Developer". For the first 2-3 months I struggled to ' +
+      'adapt myself but I worked hard to learn new technologies then ' +
+      'gradually everything changed and it became second nature.',
     location: 'Chennai, Tamilnadu, India',
     image: BinaryTechResonanceLogo,
     technologies: [
@@ -130,81 +131,117 @@ const experienceRows = [
 const Technology = ({technology}) => {
   const currentTheme = useContext(ThemeContext);
 
-  return (<span
-    className={
-      `tech-row badge 
-      ${currentTheme === 'light' ? 'bg-secondary' : 'bg-light text-dark'} 
-      ms-1`
-    }>
-    {technology}
-  </span>);
+  return (
+    <span
+      className={`tech-row badge ${
+        currentTheme === 'light' ? 'bg-secondary' : 'bg-light text-dark'
+      } ms-1`}
+    >
+      {technology}
+    </span>
+  );
 };
 
 Technology.propTypes = {
-  technology: PropTypes.string,
+  technology: PropTypes.string.isRequired,
 };
 
 const ExperienceRow = ({experienceRow}) => {
   return (
-    <div className="experience-row">
-      <div className="experience-duration">
-        <h2 className="start-year">
-          <span className="start-month">{ experienceRow.startMonth }</span>
-          { experienceRow.startYear }
+    <motion.div
+      className='experience-row'
+      initial={{x: -20, opacity: 0}}
+      whileInView={{x: 0, opacity: 1}}
+      viewport={{once: true}}
+      transition={{duration: 0.6, ease: 'easeOut'}}
+    >
+      <motion.div
+        className='experience-duration'
+        initial={{scale: 0.9, opacity: 0}}
+        whileInView={{scale: 1, opacity: 1}}
+        viewport={{once: true}}
+        transition={{duration: 0.6, delay: 0.2}}
+      >
+        <h2 className='start-year'>
+          <span className='start-month'>{experienceRow.startMonth}</span>
+          {experienceRow.startYear}
         </h2>
-        { experienceRow.startYear === experienceRow.endYear && (
-          <h6 className="till-date">Till date</h6>
-        ) }
-      </div>
-      <div className="experience-tech-icon">
-        <img src={experienceRow.image}
-          className="experience-tech-image" alt={experienceRow.company_name}/>
-      </div>
-      <div className="experience-detail">
-        <h2 className="experience-title">
-          {experienceRow.position}
-        </h2>
-        <div className="experience-company-detail">
-          <h5 className="company-title">
-            <FontAwesomeIcon className="company-icon" icon={faBuilding} />
+        {experienceRow.startYear === experienceRow.endYear && (
+          <h6 className='till-date'>Till date</h6>
+        )}
+      </motion.div>
+      <motion.div
+        className='experience-tech-icon'
+        initial={{scale: 0.9, opacity: 0}}
+        whileInView={{scale: 1, opacity: 1}}
+        viewport={{once: true}}
+        transition={{duration: 0.6, delay: 0.3}}
+      >
+        <img
+          src={experienceRow.image}
+          className='experience-tech-image'
+          alt={experienceRow.company_name}
+        />
+      </motion.div>
+      <motion.div
+        className='experience-detail'
+        initial={{y: 20, opacity: 0}}
+        whileInView={{y: 0, opacity: 1}}
+        viewport={{once: true}}
+        transition={{duration: 0.6, delay: 0.4}}
+      >
+        <h2 className='experience-title'>{experienceRow.position}</h2>
+        <div className='experience-company-detail'>
+          <h5 className='company-title'>
+            <FontAwesomeIcon className='company-icon' icon={faBuilding} />
             {experienceRow.company_name}
           </h5>
-          <h5 className="company-location">
-            <FontAwesomeIcon className="location-icon" icon={faMapMarkerAlt} />
+          <h5 className='company-location'>
+            <FontAwesomeIcon className='location-icon' icon={faMapMarkerAlt} />
             {experienceRow.location}
           </h5>
         </div>
-        <div className="experience-description-container">
-          <p className="short-description">{experienceRow.short_description}</p>
+        <div className='experience-description-container'>
+          <p className='short-description'>{experienceRow.short_description}</p>
         </div>
-        <div className="experience-tech-detail">
-          <div className="technologies-list">
-            {
-              experienceRow.technologies.map((techRow) => (
-                <Technology
-                  key={`${experienceRow.key}_${techRow.toLowerCase()}`}
-                  technology={techRow} />
-              ))
-            }
+        <motion.div
+          className='experience-tech-detail'
+          initial={{y: 10, opacity: 0}}
+          whileInView={{y: 0, opacity: 1}}
+          viewport={{once: true}}
+          transition={{duration: 0.6, delay: 0.5}}
+        >
+          <div className='technologies-list'>
+            {experienceRow.technologies.map((techRow, index) => (
+              <motion.div
+                key={`${experienceRow.key}_${techRow.toLowerCase()}`}
+                initial={{scale: 0.9, opacity: 0}}
+                whileInView={{scale: 1, opacity: 1}}
+                viewport={{once: true}}
+                transition={{duration: 0.3, delay: 0.6 + (index * 0.05)}}
+              >
+                <Technology technology={techRow} />
+              </motion.div>
+            ))}
           </div>
-        </div>
-      </div>
-    </div>
+        </motion.div>
+      </motion.div>
+    </motion.div>
   );
 };
 
 ExperienceRow.propTypes = {
   experienceRow: PropTypes.shape({
-    key: PropTypes.string,
-    position: PropTypes.string,
-    company_name: PropTypes.string,
-    short_description: PropTypes.string,
-    startYear: PropTypes.string,
-    startMonth: PropTypes.string,
-    endYear: PropTypes.string,
-    location: PropTypes.string,
-    image: PropTypes.string,
-    technologies: PropTypes.array,
+    key: PropTypes.string.isRequired,
+    position: PropTypes.string.isRequired,
+    company_name: PropTypes.string.isRequired,
+    short_description: PropTypes.string.isRequired,
+    startYear: PropTypes.string.isRequired,
+    startMonth: PropTypes.string.isRequired,
+    endYear: PropTypes.string.isRequired,
+    location: PropTypes.string.isRequired,
+    image: PropTypes.string.isRequired,
+    technologies: PropTypes.arrayOf(PropTypes.string).isRequired,
   }).isRequired,
 };
 

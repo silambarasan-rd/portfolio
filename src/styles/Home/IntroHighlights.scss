@@ -1,0 +1,40 @@
+/* Additional styles for intro highlights */
+.intro-highlights {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+  margin: 1rem 0;
+}
+
+@media (screen and min-width: 768px) {
+  .intro-highlights {
+    justify-content: center;
+    gap: 1rem;
+  }
+}
+
+.intro-highlights .highlight-item {
+  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+  color: #495057;
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border: 1px solid rgba(0, 123, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.intro-highlights .highlight-item:hover {
+  background: linear-gradient(135deg, #007bff, #0056b3);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 123, 255, 0.3);
+}
+
+@media (screen and max-width: 767px) {
+  .intro-highlights .highlight-item {
+    font-size: 0.8rem;
+    padding: 0.3rem 0.6rem;
+  }
+}

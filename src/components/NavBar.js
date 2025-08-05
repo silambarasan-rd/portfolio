@@ -11,6 +11,8 @@ import {faHomeUser,
   faFilePdf,
   faHouse,
   faInfoCircle,
+  faSun,
+  faMoon,
 } from '@fortawesome/free-solid-svg-icons';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import Scroll from 'react-scroll';
@@ -18,8 +20,112 @@ import {useEffect, useContext, useState} from 'react';
 import PropTypes from 'prop-types';
 import {ThemeContext} from '../providers/Context';
 import {NavLink} from 'react-router-dom';
+import {motion, AnimatePresence} from 'framer-motion';
 
 const resumePdf = require('../resume/silambarasan-r-resume.pdf');
+
+const ThemeToggle = ({currentTheme, onThemeChange}) => {
+  const [isAnimating, setIsAnimating] = useState(false);
+
+  const handleThemeChange = (event) => {
+    onThemeChange(event);
+    setIsAnimating(true);
+    setTimeout(() => setIsAnimating(false), 500);
+  };
+
+  const iconVariants = {
+    initial: (direction) => ({
+      scale: 0,
+      rotate: direction === 'sun' ? -180 : 180,
+      opacity: 0,
+    }),
+    animate: {
+      scale: 1,
+      rotate: 0,
+      opacity: 1,
+      transition: {
+        type: 'spring',
+        stiffness: 200,
+        damping: 15,
+        duration: 0.6,
+      },
+    },
+    exit: (direction) => ({
+      scale: 0,
+      rotate: direction === 'sun' ? 180 : -180,
+      opacity: 0,
+      transition: {
+        duration: 0.3,
+      },
+    }),
+  };
+
+  const containerVariants = {
+    initial: {
+      scale: 1,
+    },
+    animate: {
+      scale: isAnimating ? [1, 1.1, 1] : 1,
+      transition: {
+        duration: 0.3,
+      },
+    },
+  };
+
+  return (
+    <div className="theme-toggle-container">
+      <label htmlFor='appThemeSwitch' className="theme-toggle-label">
+        <input
+          type='checkbox'
+          checked={currentTheme === 'dark'}
+          id='appThemeSwitch'
+          onChange={handleThemeChange}
+        />
+        <motion.span
+          className={`checkmark ${currentTheme}`}
+          whileHover={{scale: 1.05}}
+          whileTap={{scale: 0.95}}
+          variants={containerVariants}
+          initial="initial"
+          animate="animate"
+        >
+          <AnimatePresence mode="wait">
+            {currentTheme === 'dark' ? (
+              <motion.div
+                key="moon"
+                custom="moon"
+                variants={iconVariants}
+                initial="initial"
+                animate="animate"
+                exit="exit"
+                className="theme-icon"
+              >
+                <FontAwesomeIcon icon={faMoon} />
+              </motion.div>
+            ) : (
+              <motion.div
+                key="sun"
+                custom="sun"
+                variants={iconVariants}
+                initial="initial"
+                animate="animate"
+                exit="exit"
+                className="theme-icon"
+              >
+                <FontAwesomeIcon icon={faSun} />
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </motion.span>
+      </label>
+    </div>
+  );
+};
+
+ThemeToggle.propTypes = {
+  currentTheme: PropTypes.oneOf(['dark', 'light']),
+  onThemeChange: PropTypes.func,
+};
 
 const scrollSpy = Scroll.scrollSpy;
 
@@ -116,7 +222,12 @@ const NavBar = ({changeCurrentTheme, pageType}) => {
   const [navExpanded, setNavExpanded] = useState(false);
 
   useEffect(() => {
-    scrollSpy.update();
+    // Delay scroll spy update to prevent initial scroll jump
+    const timer = setTimeout(() => {
+      scrollSpy.update();
+    }, 100);
+
+    return () => clearTimeout(timer);
   }, []);
 
   const onThemeChange = (event) => {
@@ -159,16 +270,13 @@ const NavBar = ({changeCurrentTheme, pageType}) => {
             <span className="ms-2">Download Resume</span>
           </div>
         </Nav.Link>
-        <Nav.Item target="_blank"
-          className="change-theme"
+        <Nav.Item
+          className={`change-theme ${currentTheme}`}
           title={'Change Dark/Light theme'}>
-          <label htmlFor='appThemeSwitch'>
-            <input type='checkbox' checked={currentTheme === 'dark'}
-              id='appThemeSwitch'
-              onChange={onThemeChange} />
-            <span className={`checkmark ${currentTheme}`}>
-            </span>
-          </label>
+          <ThemeToggle
+            currentTheme={currentTheme}
+            onThemeChange={onThemeChange}
+          />
         </Nav.Item>
       </Container>
     </Navbar>

@@ -11,6 +11,7 @@ import CraftWorksIcon from '../images/hobbies/craft-works.jpg';
 import PropTypes from 'prop-types';
 import SectionTitle from './SectionTitle';
 import Scroll from 'react-scroll';
+import {motion} from 'framer-motion';
 
 const hobbyInterests = [
   {
@@ -64,29 +65,74 @@ const hobbyInterests = [
 ];
 
 const HobbyRow = ({hobbyRow}) => {
-  return <div className="col-lg-3 col-md-3 col-sm-6 col-6 px-1">
-    <div className="hobby-row"
-      title={`${hobbyRow.label} | ${hobbyRow.subTitle}`}
+  return (
+    <motion.div
+      className='col-lg-3 col-md-3 col-sm-6 col-6 px-1'
+      initial={{opacity: 0, scale: 0.9}}
+      whileInView={{opacity: 1, scale: 1}}
+      viewport={{once: true}}
+      transition={{duration: 0.4}}
     >
-      <div className="hobby-icon">
-        <img src={hobbyRow.image}
-          className="hobby-image" alt={hobbyRow.label}/>
-      </div>
-      <div className="hobby-detail">
-        <h2 className="hobby-title">{hobbyRow.label}</h2>
-        { hobbyRow.subTitle &&
-           <p className="hobby-sub-title">{hobbyRow.subTitle}</p> }
-      </div>
-    </div>
-  </div>;
+      <motion.div
+        className='hobby-row'
+        title={`${hobbyRow.label} | ${hobbyRow.subTitle}`}
+        whileHover={{y: -5}}
+        transition={{type: 'spring', stiffness: 300}}
+      >
+        <motion.div
+          className='hobby-icon'
+          initial={{opacity: 0, scale: 0.8}}
+          whileInView={{opacity: 1, scale: 1}}
+          viewport={{once: true}}
+          transition={{duration: 0.4, delay: 0.2}}
+        >
+          <motion.img
+            src={hobbyRow.image}
+            className='hobby-image'
+            alt={hobbyRow.label}
+            whileHover={{scale: 1.05}}
+            transition={{duration: 0.2}}
+          />
+        </motion.div>
+        <motion.div
+          className='hobby-detail'
+          initial={{opacity: 0, y: 10}}
+          whileInView={{opacity: 1, y: 0}}
+          viewport={{once: true}}
+          transition={{duration: 0.4, delay: 0.3}}
+        >
+          <motion.h2
+            className='hobby-title'
+            initial={{opacity: 0}}
+            whileInView={{opacity: 1}}
+            viewport={{once: true}}
+            transition={{duration: 0.3, delay: 0.4}}
+          >
+            {hobbyRow.label}
+          </motion.h2>
+          {hobbyRow.subTitle && (
+            <motion.p
+              className='hobby-sub-title'
+              initial={{opacity: 0}}
+              whileInView={{opacity: 1}}
+              viewport={{once: true}}
+              transition={{duration: 0.3, delay: 0.5}}
+            >
+              {hobbyRow.subTitle}
+            </motion.p>
+          )}
+        </motion.div>
+      </motion.div>
+    </motion.div>
+  );
 };
 
 HobbyRow.propTypes = {
   hobbyRow: PropTypes.shape({
-    key: PropTypes.string,
-    label: PropTypes.string,
+    key: PropTypes.string.isRequired,
+    label: PropTypes.string.isRequired,
     subTitle: PropTypes.string,
-    image: PropTypes.string,
+    image: PropTypes.string.isRequired,
   }).isRequired,
 };
 
@@ -99,16 +145,93 @@ const Hobbies = () => {
             <div className="col">
               <SectionTitle sectionType="hobbies" />
 
-              <div className="hobbies-container">
-                <div className="row">
-                  {
-                    hobbyInterests.map((skillRow, i) => {
-                      return <HobbyRow hobbyRow={skillRow}
-                        key={skillRow.key} />;
-                    })
-                  }
+              <motion.div
+                className='hobbies-container'
+                initial={{opacity: 0}}
+                whileInView={{opacity: 1}}
+                viewport={{once: true}}
+              >
+                <div className='row'>
+                  {hobbyInterests.map((hobbyRow, index) => (
+                    <motion.div
+                      key={hobbyRow.key}
+                      initial={{opacity: 0, scale: 0.9}}
+                      whileInView={{opacity: 1, scale: 1}}
+                      viewport={{once: true}}
+                      transition={{
+                        duration: 0.5,
+                        delay: index * 0.2,
+                      }}
+                      className='col-lg-3 col-md-3 col-sm-6 col-6 px-1'
+                    >
+                      <motion.div
+                        className='hobby-row'
+                        title={`${hobbyRow.label} | ${hobbyRow.subTitle}`}
+                        whileHover={{y: -5}}
+                        transition={{type: 'spring', stiffness: 300}}
+                      >
+                        <motion.div
+                          className='hobby-icon'
+                          initial={{opacity: 0, scale: 0.8}}
+                          whileInView={{opacity: 1, scale: 1}}
+                          viewport={{once: true}}
+                          transition={{
+                            duration: 0.4,
+                            delay: index * 0.2 + 0.2,
+                          }}
+                        >
+                          <motion.img
+                            src={hobbyRow.image}
+                            className='hobby-image'
+                            alt={hobbyRow.label}
+                            whileHover={{scale: 1.05}}
+                            transition={{duration: 0.2}}
+                          />
+                        </motion.div>
+                        <motion.div
+                          className='hobby-detail'
+                          initial={{opacity: 0}}
+                          whileInView={{opacity: 1}}
+                          viewport={{once: true}}
+                          transition={{
+                            duration: 0.4,
+                            delay: index * 0.2 + 0.3,
+                          }}
+                        >
+                          <motion.h2
+                            className='hobby-title'
+                            initial={{opacity: 0, x: -20}}
+                            whileInView={{opacity: 1, x: 0}}
+                            viewport={{once: true}}
+                            transition={{
+                              duration: 0.4,
+                              delay: index * 0.2 + 0.4,
+                              ease: 'easeOut',
+                            }}
+                          >
+                            {hobbyRow.label}
+                          </motion.h2>
+                          {hobbyRow.subTitle && (
+                            <motion.p
+                              className='hobby-sub-title'
+                              initial={{opacity: 0, x: -20}}
+                              whileInView={{opacity: 1, x: 0}}
+                              viewport={{once: true}}
+                              transition={{
+                                duration: 0.4,
+                                delay: index * 0.2 + 0.5,
+                                ease: 'easeOut',
+                              }}
+                            >
+                              {hobbyRow.subTitle}
+                            </motion.p>
+                          )}
+                        </motion.div>
+                      </motion.div>
+                    </motion.div>
+                  ))}
                 </div>
-              </div>
+              </motion.div>
             </div>
           </div>
         </div>

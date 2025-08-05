@@ -7,24 +7,59 @@ import {SkillRow,
 } from './SingleSkill.styles';
 import PropTypes from 'prop-types';
 import {SkillProgressFilled, SkillProgressStop} from './SingleSkill.styles';
+import {motion} from 'framer-motion';
+import {useStaggerAnimation} from '../../hooks/useScrollAnimation';
 
-const SingleSkill = ({skillRow}) => {
+const SingleSkill = ({skillRow, index}) => {
+  const containerAnimation = useStaggerAnimation(0.1 * index);
+
   return (
-    <SkillRow>
-      <SkillTechIconHolder>
-        <SkillTechImage src={skillRow.image} alt={skillRow.label} />
-      </SkillTechIconHolder>
-      <SkillDetail>
-        <SkillTitle>{skillRow.label}</SkillTitle>
-        <SkillProgress>
-          <SkillProgressFilled
-            capacityPercent={skillRow.capacityPercent}
-            capacity={skillRow.capacity}
-          />
-          <SkillProgressStop capacityPercent={skillRow.capacityPercent} />
-        </SkillProgress>
-      </SkillDetail>
-    </SkillRow>
+    <motion.div {...containerAnimation}>
+      <SkillRow>
+        <SkillTechIconHolder>
+          <motion.div
+            initial={{scale: 0.8, opacity: 0}}
+            whileInView={{scale: 1, opacity: 1}}
+            viewport={{once: true}}
+            transition={{
+              duration: 0.3,
+              delay: 0.1 + (0.1 * index),
+            }}
+          >
+            <SkillTechImage src={skillRow.image} alt={skillRow.label} />
+          </motion.div>
+        </SkillTechIconHolder>
+        <SkillDetail>
+          <motion.div
+            initial={{opacity: 0, y: 10}}
+            whileInView={{opacity: 1, y: 0}}
+            viewport={{once: true}}
+            transition={{
+              duration: 0.3,
+              delay: 0.2 + (0.1 * index),
+            }}
+          >
+            <SkillTitle>{skillRow.label}</SkillTitle>
+          </motion.div>
+          <SkillProgress>
+            <SkillProgressFilled
+              as={motion.div}
+              initial={{width: 0}}
+              whileInView={{width: skillRow.capacityPercent}}
+              viewport={{once: true}}
+              transition={{
+                duration: 1,
+                ease: [0.22, 1, 0.36, 1],
+                delay: 0.2 + (0.1 * index),
+              }}
+              capacityPercent={skillRow.capacityPercent}
+              capacity={skillRow.capacity}
+            />
+            <SkillProgressStop capacityPercent={skillRow.capacityPercent} />
+          </SkillProgress>
+        </SkillDetail>
+      </SkillRow>
+    </motion.div>
   );
 };
 
@@ -39,6 +74,7 @@ SingleSkill.propTypes = {
         ['curious', 'proud', 'interested', 'not_interested', 'learning'],
     ),
   }).isRequired,
+  index: PropTypes.number.isRequired,
 };
 
 export default SingleSkill;

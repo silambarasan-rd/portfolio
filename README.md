@@ -13,6 +13,8 @@ A modern, responsive portfolio website built with React.js, featuring:
 - 🎨 Dynamic theme switching (Light/Dark mode)
 - 📱 Fully responsive design
 - 🔄 Smooth scrolling navigation
+- ✨ **Advanced animations with Framer Motion**
+- 🎭 **Scroll-triggered animations and interactive effects**
 - 🎵 Audio name pronunciation
 - 📄 Downloadable resume
 - 🔗 Social media integration
@@ -31,8 +33,13 @@ A modern, responsive portfolio website built with React.js, featuring:
 - **Frontend**: React.js
 - **Styling**: SCSS/Sass, Styled Components, React Bootstrap
 - **Routing**: React Router DOM
+- **Animations**: Framer Motion with scroll-triggered effects and interactive animations
 - **Icons**: FontAwesome
 - **Deployment**: Netlify
+
+## 🎭 Animation Features
+
+**Framer Motion Implementation** with scroll-triggered animations, staggered effects, interactive feedback, and smooth theme transitions. Includes reduced motion support for accessibility.
 
 ## Local Development
 

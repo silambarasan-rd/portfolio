@@ -1,6 +1,7 @@
 .navbar {
   background-color: #065A82;
   box-shadow: 0 1px 8px rgba(0,0,0,.15);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 
   .navbar-brand {
     .menu-logo {
@@ -20,9 +21,7 @@
       border: 1px solid rgba(0, 0, 0, 0);
       border-bottom-width: 2px;
       border-radius: 3px;
-      transition: background-color .2s ease-in,
-                  border .1s ease-in-out,
-                  color .2s linear;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
       font-family: "Source Sans Pro", sans-serif;
       cursor: pointer;
 
@@ -77,24 +76,72 @@
   line-height: 1.2em;
   font-weight: 300;
   color: #ffffff;
-  background-color: #1C7293;
+  background: linear-gradient(135deg, #ffa500, #ff6e00);
   border-radius: 50%;
-  transition: background-color .2s ease-in,
-  border .1s ease-in-out,
-  color .2s linear;
+  transition: all 0.3s ease;
   font-family: "Source Sans Pro", sans-serif;
   cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3), 0 2px 4px rgba(0, 0, 0, 0.2);
 
   @media (max-width: 768px) {
     left: 3em;
+  }
+
+  &.light {
+    background: linear-gradient(135deg, #ffa500, #ff6e00);
+    box-shadow: 0 4px 16px rgba(255, 165, 0, 0.4), 0 2px 8px rgba(0, 0, 0, 0.2);
+
+    &:hover {
+      box-shadow: 0 6px 20px rgba(255, 165, 0, 0.5), 0 3px 10px rgba(0, 0, 0, 0.3);
+      transform: translateY(-1px);
+    }
+  }
+
+  &.dark {
+    background: linear-gradient(135deg, #2c3e50, #34495e);
+    box-shadow: 0 4px 16px rgba(52, 73, 94, 0.4), 0 2px 8px rgba(0, 0, 0, 0.3);
+
+    &:hover {
+      box-shadow: 0 6px 20px rgba(52, 73, 94, 0.5), 0 3px 10px rgba(0, 0, 0, 0.4);
+      transform: translateY(-1px);
+    }
+  }
+
+  .theme-toggle-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    
+    .theme-toggle-label {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      cursor: pointer;
+      display: block;
+    }
   }
 
   input[type="checkbox"] {
     position: absolute;
     opacity: 0;
     cursor: pointer;
-    height: 0;
-    width: 0;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 20;
+    margin: 0;
+    outline: none;
+    border: none;
+
+    &:focus {
+      outline: none;
+      box-shadow: none;
+    }
+
+    &:focus-visible {
+      outline: none;
+    }
 
     & + .checkmark {
       position: absolute;
@@ -103,78 +150,54 @@
       height: 100%;
       width: 100%;
       cursor: pointer;
-
-      background-color: #fff;
+      background: linear-gradient(135deg, #ffa500, #ff6e00);
       display: flex;
       justify-content: center;
       align-items: center;
       border-radius: 50%;
-
       overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3), 0 2px 4px rgba(0, 0, 0, 0.2);
+      transition: all 0.3s ease;
+      outline: none;
 
-      &::after {
-        content: "";
-        display: block;        
+      .theme-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.9em;
+        color: #fff;
+        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
       }
 
-      &::before {
-        content: "";
-        font-family: "Font Awesome 6 Free", sans-serif;
-        font-size: .9em;
-        display: block;
-
-        animation-name: pullFromTop;
-        animation-duration: 1s;
-        animation-timing-function: ease-out;
+      &.light {
+        background: linear-gradient(135deg, #ffa500, #ff6e00);
+        box-shadow: 0 0 15px rgba(255, 165, 0, 0.4);
+        
+        .theme-icon {
+          color: #fff;
+          filter: drop-shadow(0 0 4px rgba(255, 255, 0, 0.6));
+        }
       }
 
-      &.light::before {
-        content: "\f185";
-        background: #fffe15;
-        background: radial-gradient(#fffe15 0%, #ffa500 40%, #ff6e00 80%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-
-        animation-name: pullFromBottom;
-        animation-duration: 1s;
-        animation-timing-function: ease-out;
+      &.dark {
+        background: linear-gradient(135deg, #2c3e50, #34495e);
+        box-shadow: 0 0 15px rgba(52, 73, 94, 0.4);
+        
+        .theme-icon {
+          color: #f39c12;
+          filter: drop-shadow(0 0 4px rgba(243, 156, 18, 0.6));
+        }
       }
 
-      &.dark::before {
-        content: "\f186";
-        color: white;
-      }
-
-      &::after {
-        content: "";
-        position: absolute;
-        display: none;
+      &:hover {
+        transform: scale(1.05);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
       }
     }
 
     &:checked + .checkmark {
-      background-color: #14123a;
+      background: linear-gradient(135deg, #2c3e50, #34495e);
     }
-  }
-}
-
-@keyframes pullFromBottom {
-  0% {
-    transform: translateY(50px);
-  }
-  50% {
-    animation-timing-function: ease-out;
-    transform: translateY(0);
-  }
-}
-
-@keyframes pullFromTop {
-  0% {
-    transform: translateY(-50px);
-  }
-  50% {
-    animation-timing-function: ease-out;
-    transform: translateY(0);
   }
 }
 

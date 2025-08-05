@@ -224,9 +224,9 @@ const skills = [
     key: 'python',
     label: 'Python',
     image: PythonIcon,
-    capacity: 9,
-    capacityPercent: '9%',
-    stopper: 'interested',
+    capacity: 25,
+    capacityPercent: '25%',
+    stopper: 'learning',
   },
   {
     key: 'ruby-on-rails',
@@ -262,12 +262,12 @@ const skills = [
   },
 ];
 
-const SkillRow = ({skillRow}) => {
+const SkillRow = ({skillRow, index}) => {
   const currentTheme = useContext(ThemeContext);
 
   return <div className="col-md-3 col-12">
     <ThemeProvider theme={{currentTheme}}>
-      <SingleSkill skillRow={skillRow} />
+      <SingleSkill skillRow={skillRow} index={index} />
     </ThemeProvider>
   </div>;
 };
@@ -283,6 +283,7 @@ SkillRow.propTypes = {
         ['curious', 'proud', 'interested', 'not_interested', 'learning'],
     ),
   }).isRequired,
+  index: PropTypes.number.isRequired,
 };
 
 const SkillSet = () => {
@@ -296,11 +297,13 @@ const SkillSet = () => {
 
               <div className="skills-container">
                 <div className="row g-1 justify-content-center">
-                  {
-                    skills.map((skillRow, i) => (
-                      <SkillRow skillRow={skillRow} key={skillRow.key} />
-                    ))
-                  }
+                  {skills.map((skillRow, i) => (
+                    <SkillRow
+                      skillRow={skillRow}
+                      key={skillRow.key}
+                      index={i}
+                    />
+                  ))}
                 </div>
               </div>
             </div>
