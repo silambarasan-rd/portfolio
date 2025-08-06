@@ -67,6 +67,40 @@ A modern, responsive portfolio website built with React.js, featuring:
 
 The project is automatically deployed to Netlify when changes are pushed to the main branch.
 
+## 🤖 GitHub Copilot Integration
+
+This repository includes GitHub Copilot instructions for better code assistance and consistent development practices.
+
+### Structure
+
+```text
+.github/
+├── copilot-instructions.md           # General project guidance
+└── instructions/
+    ├── frontend-engineering.instructions.md    # Frontend best practices
+    ├── react-components.instructions.md        # React component guidelines  
+    └── styling-animations.instructions.md      # CSS/SCSS and animation rules
+```
+
+### How It Works
+
+| Files | Instructions | Coverage |
+|-------|-------------|----------|
+| `src/**/*.{js,jsx,ts,tsx,scss,css}` | Frontend Engineering | Architecture, performance, testing |
+| `src/components/**/*.{js,jsx}` | React Components | Hooks, PropTypes, patterns |
+| `src/styles/**/*.{scss,css}` | Styling & Animations | SCSS, responsive design, Framer Motion |
+
+### Benefits
+
+- **Smart Suggestions**: Copilot provides context-aware help based on the file you're editing
+- **Consistent Code**: Follows project conventions automatically
+- **Expert Guidance**: Senior-level best practices built-in
+- **Faster Development**: Less time looking up patterns and standards
+
+### Usage
+
+Just start coding! Copilot automatically uses these instructions when you work in the repository. Look for `.github/copilot-instructions.md` in Copilot Chat references to confirm it's active.
+
 ## Contact
 
 Feel free to connect with me:
