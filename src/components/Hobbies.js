@@ -99,14 +99,14 @@ const HobbyRow = ({hobbyRow}) => {
           initial={{opacity: 0, y: 10}}
           whileInView={{opacity: 1, y: 0}}
           viewport={{once: true}}
-          transition={{duration: 0.4, delay: 0.3}}
+          transition={{duration: 0.4, delay: 0.2}}
         >
           <motion.h2
             className='hobby-title'
             initial={{opacity: 0}}
             whileInView={{opacity: 1}}
             viewport={{once: true}}
-            transition={{duration: 0.3, delay: 0.4}}
+            transition={{duration: 0.3, delay: 0.2}}
           >
             {hobbyRow.label}
           </motion.h2>
@@ -116,7 +116,7 @@ const HobbyRow = ({hobbyRow}) => {
               initial={{opacity: 0}}
               whileInView={{opacity: 1}}
               viewport={{once: true}}
-              transition={{duration: 0.3, delay: 0.5}}
+              transition={{duration: 0.3, delay: 0.2}}
             >
               {hobbyRow.subTitle}
             </motion.p>
@@ -195,7 +195,7 @@ const Hobbies = () => {
                           viewport={{once: true}}
                           transition={{
                             duration: 0.4,
-                            delay: index * 0.2 + 0.3,
+                            delay: index * 0.2 + 0.2,
                           }}
                         >
                           <motion.h2
@@ -205,7 +205,7 @@ const Hobbies = () => {
                             viewport={{once: true}}
                             transition={{
                               duration: 0.4,
-                              delay: index * 0.2 + 0.4,
+                              delay: index * 0.2 + 0.2,
                               ease: 'easeOut',
                             }}
                           >
@@ -219,7 +219,7 @@ const Hobbies = () => {
                               viewport={{once: true}}
                               transition={{
                                 duration: 0.4,
-                                delay: index * 0.2 + 0.5,
+                                delay: index * 0.2 + 0.2,
                                 ease: 'easeOut',
                               }}
                             >
