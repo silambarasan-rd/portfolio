@@ -148,10 +148,10 @@ const Intro = () => {
                         {...useStaggerAnimation(1.0)}
                       >
                         <motion.span className="highlight-item me-4">
-                          💼 8+ Years Experience
+                          🤖 AI-Powered Full-Stack Engineer
                         </motion.span>
                         <motion.span className="highlight-item me-4">
-                          🤖 AI-Powered Full-Stack Engineer
+                          💼 8+ Years Experience
                         </motion.span>
                         <motion.span className="highlight-item">
                           🚀 End-to-End Product Engineering
