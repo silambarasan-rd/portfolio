@@ -11,31 +11,32 @@ import {motion} from 'framer-motion';
 const sections = {
   'skills': {
     title: 'Skills',
-    sub_title: 'Find all the professional skills',
+    sub_title: 'Tools and technologies I use to build real-world systems.',
     icon: SkillsIcon,
     alt: 'Ratatouille (2007) rat clipart for visual representation',
   },
   'experience': {
     title: 'Experience',
-    sub_title: 'Know more about the previous work history!',
+    sub_title:
+      'Where I\'ve applied my skills to solve real engineering problems.',
     icon: ExperienceIcon,
     alt: 'God of War - Kratos clipart for visual representation',
   },
   'education': {
     title: 'Education',
-    sub_title: 'Basic detail about of educational history',
+    sub_title: 'Academic foundation and continous learning journey.',
     icon: EducationIcon,
     alt: 'Zootopia - Sheep with books',
   },
   'hobbies': {
     title: 'Hobbies',
-    sub_title: 'More on the Hobbies & Interests',
+    sub_title: 'Interests that keep me creative, curious and balanced.',
     icon: HobbiesIcon,
     alt: 'Wall-E - Robot clipart for visual representation',
   },
   'contact': {
     title: 'Contact',
-    sub_title: 'Get in touch with me!',
+    sub_title: 'Let\'s connect and build something meaningful.',
     icon: ContactIcon,
     alt: 'Boss Baby - Baby clipart for visual representation',
   },
@@ -45,6 +46,7 @@ const sections = {
 const TextMorphing = ({text, delay = 0}) => {
   return (
     <motion.div
+      title={text}
       initial={{
         scaleX: 0.3,
         scaleY: 1.5,

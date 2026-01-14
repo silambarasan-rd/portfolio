@@ -6,7 +6,10 @@ import {SkillRow,
   SkillTechIconHolder,
 } from './SingleSkill.styles';
 import PropTypes from 'prop-types';
-import {SkillProgressFilled, SkillProgressStop} from './SingleSkill.styles';
+import {
+  SkillProgressFilled,
+  SkillProgressStop,
+} from './SingleSkill.styles';
 import {motion} from 'framer-motion';
 import {useStaggerAnimation} from '../../hooks/useScrollAnimation';
 

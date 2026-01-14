@@ -11,10 +11,10 @@ const educationRows = [
   {
     key: 'master-of-computer-science',
     field_of_study: 'Master of Computer Science (DDE)',
-    institution_name: 'Annamalai University',
+    institution_name: 'Annamalai University - CDOE',
     startYear: '2023',
     endYear: '2025',
-    completed: false,
+    completed: true,
     location: 'Chidambaram, Tamilnadu, India',
   },
   {

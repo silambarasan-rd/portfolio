@@ -57,6 +57,8 @@ export const SkillProgressStop = styled.div.attrs({
 
 
 export const SkillRow = styled.div`
+  position: relative;
+  overflow: hidden;
   display: flex;
   justify-content: flex-start;
   align-items: center;
